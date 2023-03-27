@@ -11,11 +11,11 @@ export default function ContactCTA({ style }: ContactCTAProps) {
   const primaryColor = useColors("primary");
   const { width } = useMediaQuery();
   const flexDirection = useMediaValues<"row" | "column">(
-    [{ break: 770, value: "column" }],
+    [{ break: 1000, value: "column" }],
     "row"
   );
   const alignItems = useMediaValues<"center" | "flex-start">(
-    [{ break: 770, value: "flex-start" }],
+    [{ break: 1000, value: "flex-start" }],
     "center"
   );
 
@@ -25,7 +25,6 @@ export default function ContactCTA({ style }: ContactCTAProps) {
       { break: 370, value: 24 },
       { break: 585, value: 28 },
       { break: 770, value: 36 },
-      { break: 1200, value: 28 },
     ],
     43
   );
@@ -45,9 +44,9 @@ export default function ContactCTA({ style }: ContactCTAProps) {
         styles.container,
         {
           flexDirection,
-          backgroundColor: primaryColor,
-          borderRadius,
           alignItems,
+          borderRadius,
+          backgroundColor: primaryColor,
         },
         style,
       ]}
@@ -55,11 +54,12 @@ export default function ContactCTA({ style }: ContactCTAProps) {
       <Text
         style={[
           styles.mainText,
+
           {
             fontSize,
-            lineHeight: width <= 768 ? fontSize * 1.4 : fontSize * 1.7,
+            lineHeight: width <= 1000 ? fontSize * 1.4 : fontSize * 1.7,
           },
-          width <= 768 && { marginBottom: 32 },
+          width <= 1000 && { marginBottom: 32 },
         ]}
       >
         Have an app idea you need help with?
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   mainText: {
     fontWeight: "500",

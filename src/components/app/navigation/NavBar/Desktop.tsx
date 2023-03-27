@@ -1,8 +1,8 @@
 import { StyleSheet, View, ViewStyle } from "react-native-web";
 import React from "react";
 import { motion } from "framer-motion";
-import { Button, PressableText, Text } from "@components/_base";
-import { useColors } from "@hooks/index";
+import { PressableText, Text } from "@components/_base";
+import { useColors, useMediaValues } from "@hooks/index";
 import { Tabs } from "../../../../types";
 
 type MenuItem = {
@@ -37,30 +37,51 @@ export default React.memo(function NavBar({
   const backgroundColor = useColors("background");
   const primaryColor = useColors("primary");
 
+  const paddingHorizontal = useMediaValues(
+    [
+      { break: 380, value: 24 },
+      { break: 420, value: 36 },
+    ],
+    48
+  );
+
   return (
-    <View style={[styles.container, { backgroundColor }, style]}>
-      <motion.div
-        {...animationProps}
-        transition={{ ...animationProps.transition, duration: 0.7 }}
+    <View
+      style={{
+        backgroundColor,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={[
+          styles.container,
+          { paddingHorizontal, maxWidth: 1280, width: "100%" },
+          style,
+        ]}
       >
-        <Text style={[styles.logo, { color: primaryColor }]}>Machi</Text>
-      </motion.div>
-      <View style={styles.menuContainer}>
-        {menuItems.map((item, index) => {
-          return (
-            <MenuButton
-              key={item.id.toString()}
-              title={item.title}
-              onPress={() => onScrollTo(item.title)}
-              delay={index * 0.1}
-            />
-          );
-        })}
         <motion.div
           {...animationProps}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{ ...animationProps.transition, duration: 0.7 }}
         >
-          {/* <Button
+          <Text style={[styles.logo, { color: primaryColor }]}>Machi</Text>
+        </motion.div>
+        <View style={styles.menuContainer}>
+          {menuItems.map((item, index) => {
+            return (
+              <MenuButton
+                key={item.id.toString()}
+                title={item.title}
+                onPress={() => onScrollTo(item.title)}
+                delay={index * 0.1}
+              />
+            );
+          })}
+          <motion.div
+            {...animationProps}
+            transition={{ duration: 0.3, delay: 0.4 }}
+          >
+            {/* <Button
             title="Resume"
             onPress={() => {}}
             containerStyle={{
@@ -70,7 +91,8 @@ export default React.memo(function NavBar({
             textStyle={{ ...styles.resumeButtonText, color: primaryColor }}
             style={styles.resumeButton}
           /> */}
-        </motion.div>
+          </motion.div>
+        </View>
       </View>
     </View>
   );
@@ -97,7 +119,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     paddingVertical: 20,
-    paddingHorizontal: 44,
     alignItems: "center",
     justifyContent: "space-between",
   },

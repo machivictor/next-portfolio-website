@@ -88,7 +88,7 @@ const PROJECTS: ProjectType[] = [
     title: "Smart Lessons",
     tagline: "Simplifying university timetables",
     description:
-      "I developed Smart Lessons to help make our university timetables user-friendly for students and lecturers. Each user gets their own personalized schedule and realtime updates about their lessons through notifications.",
+      "I developed Smart Lessons to help make our university timetables user-friendly for students and lecturers. Each user gets their own personalized schedule and real-time updates about their lessons through notifications.",
     links: [
       {
         type: "play-store",

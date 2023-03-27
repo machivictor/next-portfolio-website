@@ -1,7 +1,7 @@
 import { StyleSheet, View, ViewProps } from "react-native-web";
 import React from "react";
-import { SectionTitle } from "../../../../components/app";
-import ExpertiseTable from "../../../../components/app/Table";
+import { SectionTitle } from "../../../app";
+import ExpertiseTable from "../../../app/Table";
 
 interface ExpertiseProps extends ViewProps {}
 
@@ -20,9 +20,7 @@ export default function Expertise({ id, onLayout, style }: ExpertiseProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    
-  },
+  container: {},
   heading: {
     fontSize: 48,
     fontWeight: "500",

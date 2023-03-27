@@ -65,16 +65,7 @@ export default function Hero({ id, onLayout, style }: HeroProps) {
 
   return (
     <div id={id}>
-      <View
-        onLayout={onLayout}
-        style={[
-          styles.container,
-          // {
-          //   paddingHorizontal: 100,
-          // },
-          style,
-        ]}
-      >
+      <View onLayout={onLayout} style={[styles.container, style]}>
         <View
           style={[
             styles.contentContainer,
@@ -284,4 +275,4 @@ const INTRO = "I am a software engineer.";
 const BIO_1 =
   "I specialize in designing and building delightful mobile experiences using ";
 const BIO_2 =
-  " I am currently in university finalizing  my bachelor’s degree in Information Technology and I am available for new opportunities.";
+  " I am currently in university finalizing my bachelor's degree in Information Technology and I am available for new opportunities.";

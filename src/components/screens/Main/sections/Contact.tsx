@@ -1,7 +1,7 @@
 import { Linking, StyleSheet, View, ViewProps } from "react-native-web";
 import React from "react";
-import { SectionTitle } from "../../../../components/app";
-import { CTAButton, Text } from "../../../../components/_base";
+import { SectionTitle } from "../../../app";
+import { CTAButton, Text } from "../../../_base";
 import { useColors, useMediaValues } from "../../../../hooks";
 import { URL } from "url";
 import { Social } from "@components/app/contact";
@@ -83,7 +83,7 @@ export default function Contact({ onLayout, style }: ContactProps) {
           {
             fontSize: careerGoalFont,
             lineHeight: careerGoalFont * 1.8,
-            width: careerGoalWidth,
+            maxWidth: 555,
           },
         ]}
       >
@@ -92,7 +92,7 @@ export default function Contact({ onLayout, style }: ContactProps) {
       <View style={[styles.buttonsContainer, { flexDirection, alignItems }]}>
         <CTAButton
           title="Write to me"
-          onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
+          onPress={() => openURL("mailto:machivictordev@gmail.com")}
           textStyle={{ fontSize }}
           lineColor={primaryColor}
           iconSize={iconSize}
@@ -104,9 +104,7 @@ export default function Contact({ onLayout, style }: ContactProps) {
         <CTAButton
           title="Setup a call with me"
           onPress={() =>
-            Linking.openURL(
-              "mailto:machivictordev@gmail.com?subject=Setup a call"
-            )
+            openURL("mailto:machivictordev@gmail.com?subject=Setup a call")
           }
           textStyle={{ fontSize }}
           iconSize={iconSize}
@@ -130,7 +128,7 @@ export default function Contact({ onLayout, style }: ContactProps) {
           Designed and built by Machi Victor
         </Text>
         <Text
-          onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
+          onPress={() => openURL("mailto:machivictordev@gmail.com")}
           style={[
             styles.footerText,
             {

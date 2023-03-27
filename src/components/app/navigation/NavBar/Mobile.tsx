@@ -51,6 +51,13 @@ export default React.memo(function MobileNavBar(props: NavBarProps) {
   const primaryColor = useColors("primary");
 
   const logoFont = useMediaValues([{ break: 480, value: 24 }], 30);
+  const paddingHorizontal = useMediaValues(
+    [
+      { break: 380, value: 24 },
+      { break: 420, value: 36 },
+    ],
+    48
+  );
 
   function handleOpen() {
     setMenuVisible(true);
@@ -62,7 +69,13 @@ export default React.memo(function MobileNavBar(props: NavBarProps) {
 
   return (
     <>
-      <View style={[styles.container, { backgroundColor }, props.style]}>
+      <View
+        style={[
+          styles.container,
+          { backgroundColor, paddingHorizontal },
+          props.style,
+        ]}
+      >
         <motion.div
           {...animationProps}
           transition={{
@@ -147,7 +160,6 @@ function MenuContent({
   onScrollTo,
   onClose,
 }: MenuContentProps) {
-  const primaryColor = useColors("primary");
   const backgroundColor = useColors("screenBackground");
 
   return (
@@ -225,7 +237,6 @@ function CloseButton({ onPress, style }: ButtonProps) {
       style={[styles.menuButtonContainer, { top: 10 }, style]}
     >
       <IoMdClose size={36} color="#fff" />
-      {/* <Icon name="close" color="#fff" size={44} /> */}
     </Pressable>
   );
 }
@@ -233,7 +244,6 @@ function CloseButton({ onPress, style }: ButtonProps) {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 20,
-    paddingHorizontal: 44,
   },
   motionContainer: {
     flexDirection: "row",
