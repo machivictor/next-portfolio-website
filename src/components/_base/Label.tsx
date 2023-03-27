@@ -1,4 +1,4 @@
-import { StyleSheet, View, ViewProps } from "react-native-web";
+import { StyleSheet,  ViewProps } from "react-native-web";
 import React from "react";
 
 import { AnimatedOnScroll, Text } from "@components/_base";

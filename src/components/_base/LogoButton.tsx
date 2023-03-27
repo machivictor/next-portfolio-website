@@ -1,10 +1,4 @@
-import {
-  ColorValue,
-  StyleSheet,
-  View,
-  ViewProps,
-  ViewStyle,
-} from "react-native-web";
+import { ColorValue,StyleSheet } from "react-native-web";
 import React from "react";
 import {
   IoLogoGooglePlaystore,
@@ -15,11 +9,12 @@ import {
 import Button from "./Button";
 import AnimatedOnScroll from "./AnimatedOnScroll";
 import Text from "./Text";
+import { MotionStyle } from "framer-motion";
 
-interface LogoButtonProps extends ViewProps {
+interface LogoButtonProps {
   name: "play-store" | "figma" | "github" | "app-store";
   color: ColorValue;
-  style?: ViewStyle;
+  style?: MotionStyle;
   delay?: number;
   onPress: () => void;
 }

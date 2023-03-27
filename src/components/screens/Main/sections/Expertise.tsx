@@ -21,7 +21,7 @@ export default function Expertise({ id, onLayout, style }: ExpertiseProps) {
 
 const styles = StyleSheet.create({
   container: {
-    // paddingHorizontal: 48,
+    
   },
   heading: {
     fontSize: 48,

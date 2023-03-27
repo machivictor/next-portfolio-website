@@ -1,5 +1,4 @@
 import {
-  View,
   Pressable,
   StyleSheet,
   Keyboard,
@@ -8,16 +7,17 @@ import {
   ViewStyle,
 } from "react-native-web";
 import React from "react";
-import { motion } from "framer-motion";
-import { useColors } from "../../hooks";
+import { motion, MotionStyle } from "framer-motion";
+
 
 import Text from "./Text";
+import { useColors } from "../../hooks";
 
 interface ButtonProps extends PressableProps {
   title?: string;
   onPress: () => void;
   textStyle?: TextStyle;
-  containerStyle?: ViewStyle;
+  containerStyle?: MotionStyle;
   style?: ViewStyle;
 }
 
@@ -31,14 +31,13 @@ export default function Button({
   children,
   ...otherProps
 }: ButtonProps) {
-  const [layout, setLayout] = React.useState({ x: 0, width: 0 });
+  const primaryColor = useColors('primary')
+  
 
   function handlePress() {
     Keyboard.dismiss();
     onPress();
   }
-
-  const primary = useColors("primary");
 
   return (
     <motion.button
@@ -48,12 +47,11 @@ export default function Button({
       whileFocus={{ opacity: 0.7 }}
       style={{
         ...styles.container,
-        backgroundColor: primary,
+        backgroundColor: primaryColor,
         ...containerStyle,
       }}
     >
       <Pressable
-        onLayout={(e) => setLayout(e.nativeEvent.layout)}
         onPress={handlePress}
         android_ripple={{
           color: otherProps.android_ripple?.color || "transparent",

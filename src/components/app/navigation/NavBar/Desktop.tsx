@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View, ViewStyle } from "react-native-web";
+import { StyleSheet, View, ViewStyle } from "react-native-web";
 import React from "react";
 import { motion } from "framer-motion";
 import { Button, PressableText, Text } from "@components/_base";
@@ -72,13 +72,6 @@ export default React.memo(function NavBar({
           />
         </motion.div>
       </View>
-      {/* <View
-        style={[
-          styles.indicator,
-          { backgroundColor: primaryColor },
-          rIndicatorStyle,
-        ]}
-      /> */}
     </View>
   );
 });
@@ -96,9 +89,6 @@ function MenuButton({ title, onPress, delay = 0, style }: MenuButtonProps) {
       >
         {title}
       </PressableText>
-      {/* <Pressable onPressIn={onPress} style={[styles.buttonContainer, style]}>
-        <Text style={[styles.menuTitle]}>{title}</Text>
-      </Pressable> */}
     </motion.div>
   );
 }

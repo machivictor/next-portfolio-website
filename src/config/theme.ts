@@ -1,3 +1,5 @@
+import { ColorValue } from "react-native-web";
+
 export interface ColorPallete {
   primary: string;
   secondary: string;
@@ -9,8 +11,8 @@ export interface ColorPallete {
 
   background: string;
 
-  white: "#fff";
-  black: "#000";
+  white: string;
+  black: string;
 }
 
 export const LIGHT: ColorPallete = {

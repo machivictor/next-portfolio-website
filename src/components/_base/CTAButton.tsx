@@ -1,23 +1,23 @@
 import {
   StyleSheet,
   View,
-  ViewStyle,
   Pressable,
   PressableProps,
   TextStyle,
 } from "react-native-web";
-import React, { use } from "react";
+import React from "react";
 import { useColors } from "../../hooks";
 import Text from "./Text";
-import Icon from "./Icon";
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 import { BiArrowBack } from "react-icons/bi";
 
-interface CTAButtonProps extends PressableProps {
+interface CTAButtonProps {
   title: string;
   textStyle?: TextStyle;
   lineColor?: string;
   iconSize?: number;
+  style?: MotionStyle
+  onPress: () => void;
 }
 
 const iconVariants = {

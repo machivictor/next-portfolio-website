@@ -1,5 +1,4 @@
 import {
-  Modal,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -45,7 +44,6 @@ const animationProps = {
 };
 
 export default React.memo(function MobileNavBar(props: NavBarProps) {
-  const { width } = useMediaQuery();
   const [menuVisible, setMenuVisible] = React.useState(false);
   const [menuLayout, setMenuLayout] = React.useState({ width: 0, height: 0 });
   const [logoHeight, setLogoHeight] = React.useState(0);

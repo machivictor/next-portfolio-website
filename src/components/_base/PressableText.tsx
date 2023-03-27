@@ -1,12 +1,14 @@
-import { Pressable, StyleSheet, TextProps, ViewStyle } from "react-native-web";
+import { Pressable, StyleSheet, ViewStyle } from "react-native-web";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 import { useColors } from "@hooks/index";
 
-interface PressableTextProps extends TextProps {
+interface PressableTextProps {
   onPress: () => void;
   containerStyle?: ViewStyle;
   color: string;
+  style?: MotionStyle;
+  children?: React.ReactNode;
 }
 
 export default function PressableText({
