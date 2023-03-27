@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { motion, MotionStyle } from "framer-motion";
 
-
 import Text from "./Text";
 import { useColors } from "../../hooks";
 
@@ -31,8 +30,7 @@ export default function Button({
   children,
   ...otherProps
 }: ButtonProps) {
-  const primaryColor = useColors('primary')
-  
+  const primaryColor = useColors("primary");
 
   function handlePress() {
     Keyboard.dismiss();
