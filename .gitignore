@@ -23,6 +23,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+.pnpm-debug.log*
+>>>>>>> e2d82df (initial commit.)
 
 # local env files
 .env*.local
