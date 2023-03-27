@@ -60,7 +60,7 @@ export default React.memo(function NavBar({
           {...animationProps}
           transition={{ duration: 0.3, delay: 0.4 }}
         >
-          <Button
+          {/* <Button
             title="Resume"
             onPress={() => {}}
             containerStyle={{
@@ -69,7 +69,7 @@ export default React.memo(function NavBar({
             }}
             textStyle={{ ...styles.resumeButtonText, color: primaryColor }}
             style={styles.resumeButton}
-          />
+          /> */}
         </motion.div>
       </View>
     </View>

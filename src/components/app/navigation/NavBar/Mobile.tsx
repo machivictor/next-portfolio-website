@@ -170,7 +170,7 @@ function MenuContent({
             />
           );
         })}
-        <Button
+        {/* <Button
           title="Resume"
           onPress={() => {}}
           containerStyle={{
@@ -179,7 +179,7 @@ function MenuContent({
           }}
           textStyle={{ ...styles.resumeButtonText, color: primaryColor }}
           style={styles.resumeButton}
-        />
+        /> */}
       </ScrollView>
     </View>
   );

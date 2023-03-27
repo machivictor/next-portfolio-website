@@ -129,6 +129,19 @@ export default function Contact({ onLayout, style }: ContactProps) {
         >
           Designed and built by Machi Victor
         </Text>
+        <Text
+          onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
+          style={[
+            styles.footerText,
+            {
+              color: accentColor,
+              fontSize: footerFont,
+              lineHeight: footerFont * 1.6,
+            },
+          ]}
+        >
+          machivictordev@gmail.com
+        </Text>
         {/* {SOCIALS.map((social) => {
           return <Social name={social.name} link={social.link} />;
         })} */}
@@ -169,4 +182,4 @@ const styles = StyleSheet.create({
 });
 
 const CAREER_GOAL =
-  "I can offer dedication and enthusiasm to a position at your company";
+  "I am a result-oriented software engineering professional and I can offer dedication and enthusiasm to a position at your company.";
