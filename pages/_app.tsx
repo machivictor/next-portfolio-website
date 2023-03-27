@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 import { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
