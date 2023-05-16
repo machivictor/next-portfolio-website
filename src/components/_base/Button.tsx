@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Keyboard } from "react-native-web";
-import type { PressableProps, TextStyle, ViewStyle } from "react-native-web";
+import type { PressableProps, ViewStyle } from "react-native-web";
 import React from "react";
 import { motion, MotionStyle } from "framer-motion";
 import { useColors } from "../../hooks";
@@ -8,7 +8,7 @@ interface ButtonProps extends PressableProps {
   title?: string;
   onPress: () => void;
   textColor?: string;
-  textStyle?: TextStyle;
+  textStyle?: any;
   containerStyle?: MotionStyle;
   style?: ViewStyle;
 }
