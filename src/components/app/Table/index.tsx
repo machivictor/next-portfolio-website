@@ -91,26 +91,19 @@ const TABLE_DATA: ColumnData[] = [
     description:
       "I am particularly passionate about building performant cross-platform apps and responsive websites.",
     tags: [
-      "React Native",
-      "Expo",
-      "React.js",
-      "Next.js",
       "Javascript",
       "Typescript",
       "HTML5",
+      "Vue.js",
+      "React.js",
+      "React Native",
+      "Expo",
+      "Next.js",
     ],
   },
   {
     title: "Back-end",
-    description:
-      "I can build robust REST APIs and manage servers on the cloud.",
-    tags: [
-      "Amazon Web Services",
-      "REST",
-      "Node.js",
-      "MySQL",
-      "MongoDb",
-      "Postgres",
-    ],
+    description: "I can build robust APIs and manage servers on the cloud.",
+    tags: ["Amazon Web Services", "REST", "GraphQL", "Node.js", "SQL", "NoSQL"],
   },
 ];

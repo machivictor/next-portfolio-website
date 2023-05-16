@@ -1,10 +1,4 @@
-import {
-  Linking,
-  StyleSheet,
-  View,
-  ViewProps,
-  ViewStyle,
-} from "react-native-web";
+import { StyleSheet, View, ViewProps } from "react-native-web";
 import Image from "next/image";
 import React from "react";
 import { useColors, useMediaValues } from "@hooks/index";
@@ -17,15 +11,13 @@ interface DesktopProjectProps extends ViewProps {
 
 interface AnimatedBannerProps {
   images: ProjectType["images"];
-  style?: ViewStyle;
+  style?: ViewProps["style"];
 }
 
 export default function DesktopProject({ item, style }: DesktopProjectProps) {
   const { title, tagline, description } = item;
 
   const accentColor = useColors("accent");
-  const primaryColor = useColors("primary");
-  const secondaryColor = useColors("secondary");
   const textPrimary = useColors("textPrimary");
 
   const taglineFont = useMediaValues<number>([{ break: 630, value: 26 }], 36);
@@ -85,19 +77,11 @@ export default function DesktopProject({ item, style }: DesktopProjectProps) {
           }}
         />
         <View style={styles.buttonsContainer}>
-          {item.links.map((url, index) => {
+          {item.links.map((prop, index) => {
             return (
               <LogoButton
-                key={url.type}
-                onPress={() => Linking.openURL(url.link)}
-                color={
-                  url.type == "app-store" || url.type == "play-store"
-                    ? primaryColor
-                    : url.type == "figma"
-                    ? accentColor
-                    : secondaryColor
-                }
-                name={url.type}
+                key={prop.type}
+                item={{ name: prop.type, link: prop.link }}
                 style={index !== item.links.length - 1 ? styles.logoButton : {}}
               />
             );
@@ -112,19 +96,12 @@ export default function DesktopProject({ item, style }: DesktopProjectProps) {
 }
 
 function AnimatedBanner({ style, images }: AnimatedBannerProps) {
-  const bannerDimensions = useMediaValues(
-    [
-      { break: 780, value: { width: "80%", height: 300 } },
-      { break: 1280, value: { width: "100%", height: 420 } },
-    ],
-    { width: "100%", height: 475 }
-  );
   const imageDimensions = useMediaValues(
     [
-      { break: 780, value: { width: "80%", height: 300 } },
-      { break: 1280, value: { width: "100%", height: 420 } },
+      { break: 780, value: { width: "80%", height: 350 } },
+      { break: 1280, value: { width: "100%", height: 470 } },
     ],
-    { width: "100%", height: 475 }
+    { width: "100%", height: 450 }
   );
 
   return (
@@ -132,7 +109,7 @@ function AnimatedBanner({ style, images }: AnimatedBannerProps) {
       style={[
         style,
         {
-          ...bannerDimensions,
+          ...imageDimensions,
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",

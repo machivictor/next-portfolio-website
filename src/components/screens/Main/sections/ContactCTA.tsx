@@ -2,6 +2,7 @@ import { StyleSheet, View, ViewStyle, Linking } from "react-native-web";
 import React from "react";
 import { CTAButton, Text } from "@components/_base";
 import { useColors, useMediaQuery, useMediaValues } from "@hooks/index";
+import SectionReveal from "@components/_base/SectionReveal";
 
 interface ContactCTAProps {
   style?: ViewStyle;
@@ -39,38 +40,40 @@ export default function ContactCTA({ style }: ContactCTAProps) {
   );
 
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          flexDirection,
-          alignItems,
-          borderRadius,
-          backgroundColor: primaryColor,
-        },
-        style,
-      ]}
-    >
-      <Text
+    <SectionReveal id={"ContactCTA"} delay={0.7}>
+      <View
         style={[
-          styles.mainText,
-
+          styles.container,
           {
-            fontSize,
-            lineHeight: width <= 1000 ? fontSize * 1.4 : fontSize * 1.7,
+            flexDirection,
+            alignItems,
+            borderRadius,
+            backgroundColor: primaryColor,
           },
-          width <= 1000 && { marginBottom: 32 },
+          style,
         ]}
       >
-        Have an app idea you need help with?
-      </Text>
-      <CTAButton
-        title="Let's talk!"
-        onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
-        textStyle={{ fontSize: fontSize + 4, fontWeight: "bold" }}
-        lineColor="#fff"
-      />
-    </View>
+        <Text
+          style={[
+            styles.mainText,
+
+            {
+              fontSize,
+              lineHeight: width <= 1000 ? fontSize * 1.4 : fontSize * 1.7,
+            },
+            width <= 1000 && { marginBottom: 32 },
+          ]}
+        >
+          Have an app idea you need help with?
+        </Text>
+        <CTAButton
+          title="Let's talk!"
+          onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
+          textStyle={{ fontSize: fontSize + 4, fontWeight: "bold" }}
+          lineColor="#fff"
+        />
+      </View>
+    </SectionReveal>
   );
 }
 

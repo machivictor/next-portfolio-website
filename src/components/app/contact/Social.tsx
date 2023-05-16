@@ -1,30 +1,46 @@
-import { StyleSheet, Pressable, Linking, ViewStyle } from "react-native-web";
+import { ViewStyle, View, StyleSheet } from "react-native-web";
 import React from "react";
-import { IoLogoDribbble, IoLogoBehance, IoLogoLinkedin } from "react-icons/io5";
-import { Text } from "@components/_base";
+import { LogoButton } from "@components/_base";
+import useColors from "@hooks/useColors";
 
-type Name = "machivictordev@gmail.com" | "dribbble" | "behance" | "linkedin";
-
-interface SocialProps {
-  name: string;
-  link: string;
+interface SocialsProps {
   style?: ViewStyle;
 }
 
-export default function Social({ name, link, style }: SocialProps) {
+export default function Socials({ style }: SocialsProps) {
+  const backgroundColor = useColors("top");
+
   return (
-    <Pressable
-      onPress={() => Linking.openURL(link)}
-      style={[styles.container, style]}
-    >
-      {name === "behance" && <IoLogoBehance />}
-      {name === "dribbble" && <IoLogoDribbble />}
-      {name === "linkedin" && <IoLogoLinkedin />}
-      {name === "machivictordev@gmail.com" && <Text>{name}</Text>}
-    </Pressable>
+    <View style={[styles.container, style]}>
+      {SOCIALS.map((social: any, index) => (
+        <LogoButton
+          size={22}
+          backgroundColor={backgroundColor}
+          delay={index * 50}
+          item={social}
+          style={index !== SOCIALS.length - 1 ? styles.logoButton : {}}
+        />
+      ))}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flexDirection: "row",
+  },
+  logoButton: {
+    marginRight: 20,
+  },
 });
+
+const SOCIALS = [
+  { name: "gmail", link: "mailto:machivictordev@gmail.com" },
+  { name: "linkedin", link: "https://www.linkedin.com/in/victor-machi/" },
+  {
+    name: "upwork",
+    link: "https://www.upwork.com/freelancers/~01e4855cb3ed5c669c",
+  },
+  { name: "twitter", link: "https://twitter.com/machi_victor/" },
+  { name: "instagram", link: "https://www.instagram.com/machi_victor/" },
+];

@@ -1,7 +1,7 @@
 import { StyleSheet, View, ViewStyle } from "react-native-web";
 import React from "react";
 import { motion } from "framer-motion";
-import { PressableText, Text } from "@components/_base";
+import { Button, PressableText, Text } from "@components/_base";
 import { useColors, useMediaValues } from "@hooks/index";
 import { Tabs } from "../../../../types";
 
@@ -81,16 +81,23 @@ export default React.memo(function NavBar({
             {...animationProps}
             transition={{ duration: 0.3, delay: 0.4 }}
           >
-            {/* <Button
-            title="Resume"
-            onPress={() => {}}
-            containerStyle={{
-              ...styles.resumeButtonContainer,
-              borderColor: primaryColor,
-            }}
-            textStyle={{ ...styles.resumeButtonText, color: primaryColor }}
-            style={styles.resumeButton}
-          /> */}
+            <a
+              href="/RESUME_VICTOR_MACHI.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                title="Resume"
+                textColor={primaryColor}
+                onPress={() => {}}
+                containerStyle={{
+                  ...styles.resumeButtonContainer,
+                  borderColor: primaryColor,
+                }}
+                textStyle={styles.resumeButtonText}
+                style={styles.resumeButton}
+              />
+            </a>
           </motion.div>
         </View>
       </View>
@@ -140,6 +147,7 @@ const styles = StyleSheet.create({
     marginLeft: 52,
     backgroundColor: "transparent",
     borderWidth: 2,
+    border: "revert",
   },
   resumeButton: {
     paddingVertical: 8,

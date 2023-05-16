@@ -1,55 +1,80 @@
-import { ColorValue,StyleSheet } from "react-native-web";
+import { Linking, StyleSheet } from "react-native-web";
 import React from "react";
 import {
-  IoLogoGooglePlaystore,
+  IoLogoGooglePlaystore as PlayStoreLogo,
   IoLogoFigma,
-  IoLogoAppleAppstore,
   IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoTwitter,
+  IoMail,
+  IoWarning,
+  IoLogoInstagram,
 } from "react-icons/io5";
+import { SiUpwork } from "react-icons/si";
 import Button from "./Button";
 import AnimatedOnScroll from "./AnimatedOnScroll";
-import Text from "./Text";
 import { MotionStyle } from "framer-motion";
+import useColors from "@hooks/useColors";
+
+type Name =
+  | "play-store"
+  | "figma"
+  | "upwork"
+  | "github"
+  | "linkedin"
+  | "instagram"
+  | "twitter"
+  | "gmail";
 
 interface LogoButtonProps {
-  name: "play-store" | "figma" | "github" | "app-store";
-  color: ColorValue;
+  item: { name: Name; link: string };
+  size?: number;
+  backgroundColor?: string;
   style?: MotionStyle;
   delay?: number;
-  onPress: () => void;
 }
 
 export default function LogoButton({
-  name,
+  item,
+  backgroundColor,
+  size = 28,
   delay = 250,
-  color,
-  onPress,
   style,
 }: LogoButtonProps) {
+  const bgColor = useColors("primary");
+  const defaultIconProps = { size, color: "#fff" };
+
+  if (!item?.name) return <IoWarning {...defaultIconProps} />;
+
   return (
-    <AnimatedOnScroll delay={delay}>
+    <AnimatedOnScroll delay={delay} offset={-50}>
       <Button
         containerStyle={{ ...styles.container, ...style }}
-        style={{ ...styles.button, backgroundColor: color }}
-        onPress={onPress}
+        style={{
+          ...styles.button,
+          backgroundColor: backgroundColor || bgColor,
+        }}
+        onPress={() => Linking.openURL(item.link)}
       >
-        {name === "play-store" && (
-          <IoLogoGooglePlaystore size={24} color={"white"} />
+        {item.name === "play-store" ? (
+          <PlayStoreLogo {...defaultIconProps} />
+        ) : item.name === "gmail" ? (
+          <IoMail {...defaultIconProps} />
+        ) : item.name === "figma" ? (
+          <IoLogoFigma {...defaultIconProps} />
+        ) : item.name === "github" ? (
+          <IoLogoGithub {...defaultIconProps} />
+        ) : item.name === "instagram" ? (
+          <IoLogoInstagram {...defaultIconProps} />
+        ) : item.name === "twitter" ? (
+          <IoLogoTwitter {...defaultIconProps} />
+        ) : item.name === "linkedin" ? (
+          <IoLogoLinkedin {...defaultIconProps} />
+        ) : item.name === "upwork" ? (
+          <SiUpwork {...defaultIconProps} />
+        ) : (
+          <IoWarning {...defaultIconProps} />
         )}
-        {name === "figma" && <IoLogoFigma size={24} color={"white"} />}
-        {name === "github" && <IoLogoGithub size={24} color={"white"} />}
-        {name === "app-store" && (
-          <IoLogoAppleAppstore size={24} color={"white"} />
-        )}
-        <Text style={{ marginTop: 8 }}>
-          {name === "play-store"
-            ? "PlayStore"
-            : name === "figma"
-            ? "Figma"
-            : name === "github"
-            ? "GitHub"
-            : "AppStore"}
-        </Text>
       </Button>
     </AnimatedOnScroll>
   );
@@ -57,10 +82,16 @@ export default function LogoButton({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 12,
+    borderRadius: 30,
   },
   button: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 12,
     paddingVertical: 12,
+  },
+  text: {
+    marginTop: 4,
+    color: "white",
+    fontWeight: "500",
+    textAlign: "center",
   },
 });

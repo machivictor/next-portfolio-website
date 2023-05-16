@@ -26,8 +26,6 @@ export default function MobileProject({ item, style }: MobileProjectProps) {
   const { title, tagline, description } = item;
 
   const accentColor = useColors("accent");
-  const primaryColor = useColors("primary");
-  const secondaryColor = useColors("secondary");
   const textPrimary = useColors("textPrimary");
 
   const titleFont = useMediaValues<number>(
@@ -108,21 +106,19 @@ export default function MobileProject({ item, style }: MobileProjectProps) {
           }}
         />
         <View style={styles.buttonsContainer}>
-          {item.links.map((url, index) => {
+          {item.links.map((prop, index) => {
             return (
-              <LogoButton
-                key={url.type}
-                onPress={() => Linking.openURL(url.link)}
-                color={
-                  url.type == "app-store" || url.type == "play-store"
-                    ? primaryColor
-                    : url.type == "figma"
-                    ? accentColor
-                    : secondaryColor
-                }
-                name={url.type}
+              <View
                 style={index !== item.links.length - 1 ? styles.logoButton : {}}
-              />
+              >
+                <LogoButton
+                  key={prop.type}
+                  item={{ name: prop.type, link: prop.link }}
+                  style={
+                    index !== item.links.length - 1 ? styles.logoButton : {}
+                  }
+                />
+              </View>
             );
           })}
         </View>
@@ -172,9 +168,9 @@ const styles = StyleSheet.create({
   },
   projectTitle: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "600",
     textTransform: "uppercase",
-    letterSpacing: 1,
+    letterSpacing: -0.1,
     fontFamily: "Larsseit",
   },
   projectTagline: {
@@ -193,7 +189,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   logoButton: {
-    marginRight: 16,
+    marginRight: 28,
   },
   bannerImage: {
     backgroundColor: "#BECCE8",

@@ -1,30 +1,33 @@
-import {
-  Pressable,
-  StyleSheet,
-  Keyboard,
-  PressableProps,
-  TextStyle,
-  ViewStyle,
-} from "react-native-web";
+import { Pressable, StyleSheet, Keyboard } from "react-native-web";
+import type { PressableProps, TextStyle, ViewStyle } from "react-native-web";
 import React from "react";
 import { motion, MotionStyle } from "framer-motion";
-
-import Text from "./Text";
 import { useColors } from "../../hooks";
 
 interface ButtonProps extends PressableProps {
   title?: string;
   onPress: () => void;
+  textColor?: string;
   textStyle?: TextStyle;
   containerStyle?: MotionStyle;
   style?: ViewStyle;
 }
+
+const buttonVariants = {
+  hovered: { backgroundColor: "#fff" },
+  tapped: { scale: 0.95 },
+};
+
+const textVariants = {
+  hovered: { color: "#000" },
+};
 
 export default function Button({
   title,
   onPress,
   disabled,
   textStyle,
+  textColor = "#fff",
   containerStyle,
   style,
   children,
@@ -39,36 +42,29 @@ export default function Button({
 
   return (
     <motion.button
-      initial={{ opacity: 1 }}
-      whileHover={{ opacity: 0.7 }}
-      whileTap={{ opacity: 0.7 }}
-      whileFocus={{ opacity: 0.7 }}
+      variants={buttonVariants}
+      whileHover="hovered"
+      whileTap="tapped"
+      whileFocus="hovered"
       style={{
         ...styles.container,
         backgroundColor: primaryColor,
+        border: "none",
+        outline: "none",
         ...containerStyle,
       }}
     >
       <Pressable
         onPress={handlePress}
-        android_ripple={{
-          color: otherProps.android_ripple?.color || "transparent",
-        }}
-        disabled={disabled}
         style={[styles.button, style]}
         {...otherProps}
       >
         {children ? (
           children
         ) : (
-          <Text
-            allowFontScaling={false}
-            numberOfLines={1}
-            ellipsizeMode="tail"
-            style={[styles.text, textStyle]}
-          >
-            {title}
-          </Text>
+          <motion.div variants={textVariants} style={{ color: textColor }}>
+            <p style={{ ...styles.text, ...textStyle }}>{title}</p>
+          </motion.div>
         )}
       </Pressable>
     </motion.button>
@@ -84,11 +80,10 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 18,
-    paddingHorizontal: 32,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
   },
   text: {
-    color: "#fff",
     fontSize: 20,
     fontWeight: "600",
     letterSpacing: 0.5,

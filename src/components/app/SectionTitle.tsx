@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   },
   subheading: {
     fontSize: 46,
+    letterSpacing: -0.5,
     fontWeight: "500",
   },
 });

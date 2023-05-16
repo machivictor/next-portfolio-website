@@ -4,6 +4,7 @@ import { DesktopProject, MobileProject } from "@components/app/Projects";
 import { useMediaValues } from "@hooks/index";
 import { SectionTitle } from "@components/app";
 import { ProjectType } from "../../../../types";
+import SectionReveal from "@components/_base/SectionReveal";
 
 interface ProjectsProps extends ViewProps {}
 
@@ -27,7 +28,7 @@ export default function Projects({
   );
 
   return (
-    <div id={id}>
+    <SectionReveal id={id} delay={0.7}>
       <View
         onLayout={onLayout}
         style={[styles.container, style]}
@@ -54,7 +55,7 @@ export default function Projects({
           })}
         </View>
       </View>
-    </div>
+    </SectionReveal>
   );
 }
 
@@ -88,7 +89,7 @@ const PROJECTS: ProjectType[] = [
     title: "Smart Lessons",
     tagline: "Simplifying university timetables",
     description:
-      "I developed Smart Lessons to help make our university timetables user-friendly for students and lecturers. Each user gets their own personalized schedule and real-time updates about their lessons through notifications.",
+      "Inspired by my own experience as a university student, it features a user-friendly interface that allows students and lecturers to easily view and manage their schedules, find available classrooms, and communicate with each other.",
     links: [
       {
         type: "play-store",
@@ -106,7 +107,7 @@ const PROJECTS: ProjectType[] = [
     title: "Kayo Children Home",
     tagline: "Connecting needy children with sponsors",
     description:
-      "Users can see needy children in the orphanage and start sponsoring them. There is a public forum for discussions. I also integrated payment services allowing users to make donations via the app.",
+      "Sponsors can browse needy children in the orphanage and start sponsoring them. There is a public forum for discussions. I also integrated payment services allowing users to make donations directly via the app.",
     links: [
       {
         type: "figma",

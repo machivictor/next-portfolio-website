@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, View } from "react-native-web";
+import { StyleSheet, View } from "react-native-web";
 import React from "react";
 import { NavBar } from "@components/app/navigation";
 import { Tabs } from "../../../types";
@@ -88,9 +88,7 @@ export default function MainPage({}: MainPageProps) {
             marginBottom: sectionMarginBottom,
           }}
         />
-        <div id="Contact">
-          <ContactSection style={{ ...styles.contactSection }} />
-        </div>
+        <ContactSection id="Contact" style={{ ...styles.contactSection }} />
       </View>
     </View>
   );

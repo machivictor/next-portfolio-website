@@ -32,7 +32,7 @@ export default function Hero({ id, onLayout, style }: HeroProps) {
       { break: 750, value: "100%" },
       { break: 990, value: "80%" },
     ],
-    "58%"
+    "54%"
   );
   const introFontSize = useMediaValues<number>(
     [
@@ -52,15 +52,14 @@ export default function Hero({ id, onLayout, style }: HeroProps) {
     ],
     18
   );
-
   const bioFontSize = useMediaValues<number>(
     [
-      { break: 300, value: 14 },
-      { break: 370, value: 15 },
+      { break: 300, value: 13 },
+      { break: 370, value: 16 },
       { break: 585, value: 16 },
-      { break: 650, value: 17 },
+      { break: 650, value: 18 },
     ],
-    18
+    20
   );
 
   return (
@@ -108,24 +107,16 @@ export default function Hero({ id, onLayout, style }: HeroProps) {
               lineHeight: bioFontSize * 1.8,
             }}
           >
-            {BIO_1}
-            <Text
-              onPress={() => Linking.openURL("https://reactnative.dev")}
-              style={{ color: "#ffa43b" }}
-            >
-              React Native.
-            </Text>
-            {BIO_2}
+            {BIO}
           </AnimatedText>
           <motion.div
             initial={{ opacity: 0, translateY: 20 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            style={{}}
           >
             <Button
               onPress={() => Linking.openURL("mailto:machivictordev@gmail.com")}
-              title="Let's work together"
+              title="Get in touch"
             />
           </motion.div>
         </View>
@@ -219,19 +210,20 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 46,
     fontWeight: "bold",
-    letterSpacing: 1,
+    letterSpacing: -0.5,
     lineHeight: 52,
     marginBottom: 4,
   },
   intro: {
     fontSize: 46,
     fontWeight: "bold",
+    letterSpacing: -0.5,
     opacity: 0.7,
     marginBottom: 40,
   },
   bio: {
     fontSize: 18,
-    marginBottom: 54,
+    marginBottom: 56,
     fontWeight: "300",
   },
   desktopImageContainer: {
@@ -271,8 +263,6 @@ const styles = StyleSheet.create({
 
 const GREETING = "Hi, my name is";
 const NAME = "Machi Victor.";
-const INTRO = "I am a software engineer.";
-const BIO_1 =
-  "I specialize in designing and building delightful mobile experiences using ";
-const BIO_2 =
-  " I am currently in university finalizing my bachelor's degree in Information Technology and I am available for new opportunities.";
+const INTRO = "Welcome to my portfolio website.";
+const BIO =
+  "I'm a software engineer based in Kenya with a passion for crafting seamless user experiences and a commitment to staying at the forefront of technology trends.";

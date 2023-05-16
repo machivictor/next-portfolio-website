@@ -3,19 +3,12 @@ import React from "react";
 import { SectionTitle } from "../../../app";
 import { CTAButton, Text } from "../../../_base";
 import { useColors, useMediaValues } from "../../../../hooks";
-import { URL } from "url";
 import { Social } from "@components/app/contact";
+import SectionReveal from "@components/_base/SectionReveal";
 
 interface ContactProps extends ViewProps {}
 
-const SOCIALS = [
-  { name: "machivictordev@gmail.com", link: "mailto:machivictordev@gmail.com" },
-  { name: "linkedin", link: "https://linkedin.com/machivictor" },
-  { name: "Dribbble", link: "https://dribbble.com/machivictor" },
-  { name: "Behance", link: "https://behance.com/machivictor" },
-];
-
-export default function Contact({ onLayout, style }: ContactProps) {
+export default function Contact({ id, onLayout, style }: ContactProps) {
   const accentColor = useColors("accent");
   const primaryColor = useColors("primary");
 
@@ -54,10 +47,6 @@ export default function Contact({ onLayout, style }: ContactProps) {
     ],
     20
   );
-  const careerGoalWidth = useMediaValues(
-    [{ break: 770, value: "100%" }],
-    "50%"
-  );
   const footerFont = useMediaValues<number>(
     [
       { break: 300, value: 13 },
@@ -71,80 +60,67 @@ export default function Contact({ onLayout, style }: ContactProps) {
   const openURL = (url: string) => Linking.openURL(url);
 
   return (
-    <View onLayout={onLayout} style={[styles.container, style]}>
-      <SectionTitle
-        heading="Contact me"
-        subheading="Let's work together"
-        style={styles.sectionTitle}
-      />
-      <Text
-        style={[
-          styles.careerGoal,
-          {
-            fontSize: careerGoalFont,
-            lineHeight: careerGoalFont * 1.8,
-            maxWidth: 555,
-          },
-        ]}
-      >
-        {CAREER_GOAL}
-      </Text>
-      <View style={[styles.buttonsContainer, { flexDirection, alignItems }]}>
-        <CTAButton
-          title="Write to me"
-          onPress={() => openURL("mailto:machivictordev@gmail.com")}
-          textStyle={{ fontSize }}
-          lineColor={primaryColor}
-          iconSize={iconSize}
-          style={flexDirection === "column" ? { marginBottom: 28 } : {}}
+    <SectionReveal id={id} delay={0.8}>
+      <View onLayout={onLayout} style={[styles.container, style]}>
+        <SectionTitle
+          heading="Contact me"
+          subheading="Get in touch"
+          style={styles.sectionTitle}
         />
-        {flexDirection === "row" && (
-          <Text style={[styles.orText, { color: primaryColor }]}>or</Text>
-        )}
-        <CTAButton
-          title="Setup a call with me"
-          onPress={() =>
-            openURL("mailto:machivictordev@gmail.com?subject=Setup a call")
-          }
-          textStyle={{ fontSize }}
-          iconSize={iconSize}
-          lineColor={primaryColor}
-        />
-      </View>
-      <View style={[styles.footer, { flexDirection }]}>
         <Text
           style={[
-            styles.footerText,
+            styles.careerGoal,
             {
-              color: accentColor,
-              fontSize: footerFont,
-              lineHeight: footerFont * 1.6,
-            },
-            flexDirection === "column" && {
-              marginBottom: 14,
+              fontSize: careerGoalFont,
+              lineHeight: careerGoalFont * 1.8,
+              maxWidth: 555,
             },
           ]}
         >
-          Designed and built by Machi Victor
+          {CAREER_GOAL}
         </Text>
-        <Text
-          onPress={() => openURL("mailto:machivictordev@gmail.com")}
-          style={[
-            styles.footerText,
-            {
-              color: accentColor,
-              fontSize: footerFont,
-              lineHeight: footerFont * 1.6,
-            },
-          ]}
-        >
-          machivictordev@gmail.com
-        </Text>
-        {/* {SOCIALS.map((social) => {
-          return <Social name={social.name} link={social.link} />;
-        })} */}
+        <View style={[styles.buttonsContainer, { flexDirection, alignItems }]}>
+          <CTAButton
+            title="Write to me"
+            onPress={() => openURL("mailto:machivictordev@gmail.com")}
+            textStyle={{ fontSize }}
+            lineColor={primaryColor}
+            iconSize={iconSize}
+            style={flexDirection === "column" ? { marginBottom: 28 } : {}}
+          />
+          {flexDirection === "row" && (
+            <Text style={[styles.orText, { color: primaryColor }]}>or</Text>
+          )}
+          <CTAButton
+            title="Setup a call with me"
+            onPress={() =>
+              openURL("mailto:machivictordev@gmail.com?subject=Setup a call")
+            }
+            textStyle={{ fontSize }}
+            iconSize={iconSize}
+            lineColor={primaryColor}
+          />
+        </View>
+        <View style={styles.footer}>
+          <Social style={{ marginBottom: 20 }} />
+          <Text
+            style={[
+              styles.footerText,
+              {
+                color: accentColor,
+                fontSize: footerFont,
+                lineHeight: footerFont * 1.6,
+              },
+              flexDirection === "column" && {
+                marginBottom: 14,
+              },
+            ]}
+          >
+            Designed and built by Machi Victor
+          </Text>
+        </View>
       </View>
-    </View>
+    </SectionReveal>
   );
 }
 
@@ -155,12 +131,12 @@ const styles = StyleSheet.create({
   },
   careerGoal: {
     fontSize: 18,
-    marginBottom: 60,
+    marginBottom: 56,
     fontWeight: "300",
   },
   buttonsContainer: {
     flexDirection: "row",
-    marginBottom: 60,
+    marginBottom: 72,
   },
   orText: {
     fontSize: 48,
@@ -168,11 +144,8 @@ const styles = StyleSheet.create({
     marginRight: 24 + 20,
     opacity: 0.3,
   },
-  footer: {
-    flexDirection: "row",
-  },
+  footer: {},
   footerText: {
-    marginRight: 60,
     fontSize: 18,
     letterSpacing: 0.5,
     fontWeight: "300",
@@ -180,4 +153,4 @@ const styles = StyleSheet.create({
 });
 
 const CAREER_GOAL =
-  "I am a result-oriented software engineering professional and I can offer dedication and enthusiasm to a position at your company.";
+  "Let's collaborate and create impactful digital solutions together!";

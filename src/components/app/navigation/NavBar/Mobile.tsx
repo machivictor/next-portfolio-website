@@ -161,6 +161,7 @@ function MenuContent({
   onClose,
 }: MenuContentProps) {
   const backgroundColor = useColors("screenBackground");
+  const primaryColor = useColors("primary");
 
   return (
     <View onLayout={onLayout} style={[styles.menuContent, { backgroundColor }]}>
@@ -182,22 +183,29 @@ function MenuContent({
             />
           );
         })}
-        {/* <Button
-          title="Resume"
-          onPress={() => {}}
-          containerStyle={{
-            ...styles.resumeButtonContainer,
-            borderColor: primaryColor,
-          }}
-          textStyle={{ ...styles.resumeButtonText, color: primaryColor }}
-          style={styles.resumeButton}
-        /> */}
+        <a
+          href="/RESUME_VICTOR_MACHI.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            title="Resume"
+            textColor={primaryColor}
+            onPress={() => {}}
+            containerStyle={{
+              ...styles.resumeButtonContainer,
+              borderColor: primaryColor,
+            }}
+            textStyle={styles.resumeButtonText}
+            style={styles.resumeButton}
+          />
+        </a>
       </ScrollView>
     </View>
   );
 }
 
-function MenuButton({ title, onPress, isFocused, style }: MenuButtonProps) {
+function MenuButton({ title, onPress, style }: MenuButtonProps) {
   return (
     <Pressable onPress={onPress} style={[styles.buttonContainer, style]}>
       <Text style={[styles.menuTitle]}>{title}</Text>
@@ -284,13 +292,14 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     backgroundColor: "transparent",
     borderWidth: 2,
+    border: "revert",
   },
   resumeButton: {
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
   resumeButtonText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "500",
     letterSpacing: 0,
   },

@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  View,
-  Pressable,
-  PressableProps,
-  TextStyle,
-} from "react-native-web";
+import { StyleSheet, View, Pressable, TextStyle } from "react-native-web";
 import React from "react";
 import { useColors } from "../../hooks";
 import Text from "./Text";
@@ -16,7 +10,7 @@ interface CTAButtonProps {
   textStyle?: TextStyle;
   lineColor?: string;
   iconSize?: number;
-  style?: MotionStyle
+  style?: MotionStyle;
   onPress: () => void;
 }
 

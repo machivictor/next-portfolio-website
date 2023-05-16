@@ -1,7 +1,7 @@
 import { ImageProps } from "next/image";
 import { ColorValue } from "react-native-web";
 
-type URL = "play-store" | "app-store" | "github" | "figma";
+type URL = "play-store" | "github" | "figma";
 
 export interface ProjectImages {
   portrait?: string | keyof ImageProps["src"];
