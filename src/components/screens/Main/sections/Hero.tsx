@@ -265,4 +265,4 @@ const GREETING = "Hi, my name is";
 const NAME = "Machi Victor.";
 const INTRO = "Welcome to my portfolio website.";
 const BIO =
-  "I'm a software engineer with a passion for making meaningful and delightful digital products that create an equilibrium between user needs and business goals.";
+  "I'm a software engineer based in Kenya with a passion for crafting seamless user experiences and a commitment to staying at the forefront of technology trends.";
