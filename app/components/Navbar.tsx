@@ -15,6 +15,11 @@ const NavBar = () => {
   const [mobileMenuShown, setMobileMenuShown] = React.useState(false);
   const [isScrolled, setScrolled] = React.useState(false);
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) setScrolled(true);
+    else setScrolled(false);
+  };
+
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,11 +35,6 @@ const NavBar = () => {
       document.body.style.overflow = "visible";
     };
   }, [mobileMenuShown]);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) setScrolled(true);
-    else setScrolled(false);
-  };
 
   return (
     <div
