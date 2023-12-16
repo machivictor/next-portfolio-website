@@ -12,7 +12,7 @@ const Contact = (props: Props) => {
   return (
     <div id="contact" className={`max-w-md ${props.className}`}>
       <SectionTitle section="Contact" subheading="Let's connect" />
-      <p className="text-[13px] leading-[22px] mt-4 mb-11">
+      <p className="text-[13px] leading-[22px] mt-4 mb-11  md:text-[15px] md:leading-[26px]">
         {profile.ambition}
       </p>
       <Link

@@ -42,7 +42,7 @@ const NavBar = () => {
         isScrolled && "nav-darkened"
       }`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
           {/* logo */}
           <Link href="#" className="font-bold text-xl text-amber z-20">
@@ -55,7 +55,7 @@ const NavBar = () => {
               <Link
                 key={tab.label}
                 href={tab.href}
-                className={`font-medium text-sm hover:text-typocolor-900 transition-colors`}
+                className={`font-medium text-base hover:text-typocolor-900 transition-colors`}
               >
                 {tab.label}
               </Link>
