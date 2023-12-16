@@ -16,7 +16,7 @@ const Contact = (props: Props) => {
         {profile.ambition}
       </p>
       <Link
-        href="mailto://machivictordev@gmail.com"
+        href="mailto:machivictordev@gmail.com"
         className="bg-amber font-bold text-black text-[15px] py-[10px] px-[20px] rounded-sm hover:bg-white transition-colors"
       >
         machivictordev@gmail.com

@@ -10,7 +10,7 @@ export default {
 export const socials = [
   { name: "linkedin", url: "https://www.linkedin.com/in/victor-machi/" },
   { name: "github", url: "https://github.com/machivictor/" },
-  { name: "gmail", url: "mailto://machivictordev@gmail.com" },
+  { name: "gmail", url: "mailto:machivictordev@gmail.com" },
 ];
 
 export const projects = [
