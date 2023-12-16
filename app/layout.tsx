@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/Navbar";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = localFont({
   variable: "--font-poppins",
@@ -62,6 +64,10 @@ export default function RootLayout({
             </Link>
           </p>
         </footer>
+
+        {/* Vercel */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
