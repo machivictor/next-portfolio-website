@@ -10,14 +10,14 @@ interface Props {
 
 const Contact = (props: Props) => {
   return (
-    <div id="contact" className={`max-w-md ${props.className}`}>
+    <div id="contact" className={`max-w-xl ${props.className}`}>
       <SectionTitle section="Contact" subheading="Let's connect" />
-      <p className="text-[13px] leading-[22px] mt-4 mb-11  md:text-[15px] md:leading-[26px]">
+      <p className="text-[13px] leading-[22px] mt-4 mb-11  md:text-[16px] md:leading-[28px]">
         {profile.ambition}
       </p>
       <Link
         href="mailto:machivictordev@gmail.com"
-        className="bg-amber font-bold text-black text-[15px] py-[10px] px-[20px] rounded-sm hover:bg-white transition-colors"
+        className="bg-amber font-bold text-black text-[15px] py-[10px] px-[20px] rounded-sm hover:bg-white transition-colors md:text-[17px]"
       >
         machivictordev@gmail.com
       </Link>
@@ -25,7 +25,7 @@ const Contact = (props: Props) => {
         <Link
           download="RESUME_VICTOR_MACHI.pdf"
           href="RESUME_VICTOR_MACHI.pdf"
-          className="flex flex-row items-center text-base text-sky font-semibold hover:text-white transition"
+          className="flex flex-row items-center text-base text-sky font-semibold hover:text-white transition md:text-[16px]"
         >
           <LiaFileDownloadSolid
             size={16}

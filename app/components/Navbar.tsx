@@ -55,7 +55,7 @@ const NavBar = () => {
               <Link
                 key={tab.label}
                 href={tab.href}
-                className={`font-medium text-base hover:text-typocolor-900 transition-colors`}
+                className={`font-medium text-sm hover:text-typocolor-900 transition-colors`}
               >
                 {tab.label}
               </Link>

@@ -37,7 +37,7 @@ const Projects: any = (props: Props) => {
                   {/* description */}
                   <div className="py-7 px-5 sm:flex sm:flex-col sm:justify-center">
                     <h3 className="block mb-[10px] leading-tight">
-                      <div className="tracking-wide text-[13px] leading-[18px] text-sky font-medium">
+                      <div className="tracking-wide text-[13px] leading-[18px] text-sky font-medium md:text-[15px] md:leading-[20px]">
                         {project.category}
                       </div>
                       {project.name}

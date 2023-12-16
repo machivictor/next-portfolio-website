@@ -54,7 +54,7 @@ export default function RootLayout({
         </nav>
         <main className="max-w-[1180px] mx-auto">{children}</main>
         <footer className="mt-12 mb-10 flex justify-center">
-          <p className=" text-white">
+          <p className=" text-white md:text-sm">
             Designed and built by{" "}
             <Link
               href="#"
