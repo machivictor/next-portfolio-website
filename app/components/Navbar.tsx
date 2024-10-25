@@ -50,7 +50,7 @@ const NavBar = () => {
           {/* tabs */}
           <div className="hidden sm:flex space-x-6">
             {TABS.map((tab) => (
-              <MenuItem {...tab} />
+              <MenuItem key={tab.label} {...tab} />
             ))}
           </div>
 
@@ -125,7 +125,6 @@ const NavBar = () => {
 const MenuItem = ({ label, href }: any) => {
   return (
     <Link
-      key={label}
       to={href}
       className={`font-medium text-sm hover:text-white transition-colors`}
     >
