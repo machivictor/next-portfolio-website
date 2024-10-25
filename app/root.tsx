@@ -7,6 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 import Contact from "~/components/Contact";
 import ExpertiseTable from "~/components/ExpertiseTable";
 import Footer from "~/components/Footer";
@@ -65,6 +67,9 @@ export function Layout() {
 
         <ScrollRestoration />
         <Scripts />
+
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
