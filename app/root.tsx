@@ -7,8 +7,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/remix";
 import Contact from "~/components/Contact";
 import ExpertiseTable from "~/components/ExpertiseTable";
 import Footer from "~/components/Footer";
@@ -42,7 +40,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export function Layout({}: { children: React.ReactNode }) {
+export function Layout() {
   return (
     <html lang="en">
       <head>
@@ -58,7 +56,7 @@ export function Layout({}: { children: React.ReactNode }) {
         <main className="max-w-[1180px] mx-auto">
           <div className="pb-10 mx-auto px-6 md:px-10 xl:px-0 xl:max-w-[1380px]">
             <Hero />
-            <Work className="pt-8" />
+            <Work className="pt-28" />
             <ExpertiseTable className="pt-28" />
             <Contact className="pt-28" />
             <Footer />
@@ -67,10 +65,6 @@ export function Layout({}: { children: React.ReactNode }) {
 
         <ScrollRestoration />
         <Scripts />
-
-        {/* Vercel */}
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

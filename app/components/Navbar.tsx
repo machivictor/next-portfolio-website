@@ -90,7 +90,7 @@ const NavBar = () => {
 
           {/* mobile menu */}
           {mobileMenuShown && (
-            <div
+            <button
               onClick={() => setMobileMenuShown(false)}
               className="flex flex-1 absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm"
               style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
@@ -108,12 +108,12 @@ const NavBar = () => {
                 <Link
                   target="_blank"
                   to="RESUME_VICTOR_MACHI.pdf"
-                  className="flex flex-row items-center mx-[24px] text-center mb-2 mt-6 bg-gray-600 hover:bg-amber hover:text-black transition-colors text-base py-[6px] px-[10px] rounded-md active:scale-105 "
+                  className="flex flex-row items-center mx-[24px] text-center mb-2 mt-6 bg-gray-600 hover:bg-amber hover:text-black transition-colors text-base py-[6px] px-[10px] rounded-md"
                 >
                   Download resume
                 </Link>
               </div>
-            </div>
+            </button>
           )}
         </div>
       </div>
@@ -121,7 +121,12 @@ const NavBar = () => {
   );
 };
 
-const MenuItem = ({ label, href }: any) => {
+interface MenuItemProps {
+  label: string;
+  href: string;
+}
+
+const MenuItem = ({ label, href }: MenuItemProps) => {
   return (
     <Link
       to={href}

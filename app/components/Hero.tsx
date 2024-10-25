@@ -7,7 +7,7 @@ const imageDimensionClass = "aspect-square w-[240px] md:w-[250px] xl:w-[300px]";
 
 const Hero = () => {
   return (
-    <div className="mx-auto mt-[-20px] max-w-xl md:max-w-none min-h-screen flex justify-center items-center">
+    <div className="mx-auto mt-[-36px] max-w-xl md:max-w-none min-h-screen flex justify-center items-center">
       <div className="md:flex md:justify-center md:items-center md:flex-1">
         {/* image */}
         <div
