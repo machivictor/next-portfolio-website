@@ -1,12 +1,8 @@
 import type { Config } from "tailwindcss";
-const defaultTheme = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [],
   theme: {
     colors: {
@@ -28,8 +24,8 @@ const config: Config = {
       },
     },
     fontFamily: {
-      default: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],
-      heading: ["var(--font-preahvihear)"],
+      heading: ["Preahvihear", ...defaultTheme.fontFamily.sans],
+      default: ["Poppins", ...defaultTheme.fontFamily.sans],
     },
     container: {
       center: true,

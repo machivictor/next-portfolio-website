@@ -1,6 +1,5 @@
-import React from "react";
+import { skills } from "../../profile";
 import SectionTitle from "./utils/SectionTitle";
-import { skills } from "@/profile";
 
 interface Props {
   className?: string;

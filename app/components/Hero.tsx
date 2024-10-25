@@ -1,9 +1,7 @@
-import profile, { socials } from "@/profile";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { Link } from "@remix-run/react";
 import { IoLogoGithub, IoLogoLinkedin, IoMail } from "react-icons/io5";
 import { SiUpwork } from "react-icons/si";
+import profile, { socials } from "../../profile";
 
 const imageDimensionClass = "aspect-square w-[240px] md:w-[250px] xl:w-[300px]";
 
@@ -15,7 +13,7 @@ const Hero = () => {
         <div
           className={`mx-auto md:mx-0 rounded-full overflow-hidden md:shrink-0 ${imageDimensionClass}`}
         >
-          <Image
+          <img
             src={profile.headshot}
             className={`object-cover ${imageDimensionClass}`}
             alt={`${profile.firstname} ${profile.lastname}'s picture.`}
@@ -43,7 +41,7 @@ const Hero = () => {
               const iconProps = { size: 20, color: "black" };
 
               return (
-                <Link key={social.name} href={social.url}>
+                <Link key={social.name} to={social.url}>
                   <div className="w-[36px] h-[36px] rounded-full mx-2 bg-amber flex justify-center items-center hover:bg-white transition">
                     {social.name == "linkedin" && (
                       <IoLogoLinkedin {...iconProps} />

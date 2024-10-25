@@ -1,7 +1,12 @@
+import headshot from "/images/headshot.jpg?url";
+import samaritanBanner from "/images/samaritan-banner.png?url";
+import tamariBanner from "/images/tamari-banner.png?url";
+import tamariIcon from "/images/tamari-icon.png?url";
+
 export default {
   firstname: "Victor",
   lastname: "Machi",
-  headshot: require("@/public/images/headshot.jpg"),
+  headshot: headshot,
   role: "skilled software engineer",
   valueProp: "Crafts deligtful user experiences",
   ambition: `I am currently looking to join a cross-functional team that values improving people's lives through software engineering. Or need help with your project? Let's connect.`,
@@ -15,24 +20,35 @@ export const socials = [
 
 export const projects = [
   {
-    name: "Smart Lessons",
-    description: `Inspired by my own experience as a university student, it allows students and lecturers to easily view and manage their schedules, find available classrooms, and share learning material. This project is currently under testing in MMUST.`,
+    name: "Tamari",
+    description: `Inspired by my own experience as a university student, it enables students and lecturers to easily view and manage their schedules, find available classrooms, and share learning material. This project is currently under testing in MMUST.`,
+    icon: tamariIcon,
     category: "Patented",
     banner: {
-      path: require("@/public/images/smart-lessons-banner.png"),
-      alt: "Smart Lessons app banner.",
+      path: tamariBanner,
+      alt: "Tamari app banner.",
     },
-    link: "https://play.google.com/store/apps/details?id=com.machivictor.DiT",
+    links: [
+      {
+        platform: "playstore",
+        url: "https://play.google.com/store/apps/details?id=com.machivictor.tamari",
+      },
+    ],
   },
   {
     name: "Samaritan",
     description: `Sponsors can use the app to find needy children in orphanages and start sponsoring them. There is a public forum for discussions. I also integrated payment services allowing sponsors to make donations directly via the app.`,
     category: "Demo project",
     banner: {
-      path: require("@/public/images/samaritan-banner.png"),
+      path: samaritanBanner,
       alt: "Samaritan app banner.",
     },
-    link: "https://www.figma.com/file/ai5HCMROMezoTi7kWrgxkC/Children-Home-App---UI-Design?node-id=301%3A3&t=qnPyp3ivUXzlrDvB-1",
+    links: [
+      {
+        platform: "figma",
+        url: "https://www.figma.com/file/ai5HCMROMezoTi7kWrgxkC/Children-Home-App---UI-Design?node-id=301%3A3&t=qnPyp3ivUXzlrDvB-1",
+      },
+    ],
   },
 ];
 

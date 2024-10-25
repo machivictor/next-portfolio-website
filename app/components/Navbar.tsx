@@ -1,9 +1,7 @@
-"use client";
-
-import profile from "@/profile";
-import Link from "next/link";
-import React from "react";
+import { Link, useLocation } from "@remix-run/react";
+import React, { useEffect } from "react";
 import { LiaFileDownloadSolid } from "react-icons/lia";
+import profile from "../../profile";
 
 const TABS = [
   { label: "Work", href: "#work" },
@@ -45,20 +43,14 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
           {/* logo */}
-          <Link href="#" className="font-bold text-xl text-amber z-20">
+          <Link to="#" className="font-bold text-xl text-amber z-20">
             {profile.lastname} {profile.firstname}
           </Link>
 
           {/* tabs */}
           <div className="hidden sm:flex space-x-6">
             {TABS.map((tab) => (
-              <Link
-                key={tab.label}
-                href={tab.href}
-                className={`font-medium text-sm hover:text-typocolor-900 transition-colors`}
-              >
-                {tab.label}
-              </Link>
+              <MenuItem {...tab} />
             ))}
           </div>
 
@@ -66,22 +58,17 @@ const NavBar = () => {
           <div className="hidden sm:flex">
             <Link
               target="_blank"
-              href="RESUME_VICTOR_MACHI.pdf"
-              className="flex flex-row items-center bg-amber font-bold text-black text-sm py-[6px] px-[12px] rounded-sm hover:bg-white transition-colors active:scale-105"
+              to="RESUME_VICTOR_MACHI.pdf"
+              className="flex flex-row items-center text-sm py-[6px] px-[12px] rounded-md bg-gray-600 hover:bg-amber hover:text-black transition-colors active:scale-105"
             >
-              <LiaFileDownloadSolid
-                size={16}
-                color="black"
-                className="mr-[6px]"
-              />
-              Resume
+              Download resume
             </Link>
           </div>
 
           {/* mobile hamburger */}
           <div className="sm:hidden flex items-center z-20">
             <button
-              className="outline-none bg-amber p-[4px] rounded-sm"
+              className="outline-none bg-amber p-[4px] rounded-md"
               onClick={() => setMobileMenuShown(!mobileMenuShown)}
             >
               <svg
@@ -109,11 +96,11 @@ const NavBar = () => {
               className="flex flex-1 absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm"
               style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
             >
-              <div className="flex flex-col pb-[10px] absolute right-6 rounded-md top-16 w-40 bg-gray-800 overflow-hidden">
+              <div className="flex flex-col pb-[10px] absolute right-6 rounded-md top-16 bg-gray-900 overflow-hidden">
                 {TABS.map((tab) => (
                   <Link
                     key={tab.label}
-                    href={tab.href}
+                    to={tab.href}
                     className="border-b border-gray-700 text-base font-medium py-[12px] px-[20px] hover:bg-gray-600 transition"
                   >
                     {tab.label}
@@ -121,15 +108,10 @@ const NavBar = () => {
                 ))}
                 <Link
                   target="_blank"
-                  href="RESUME_VICTOR_MACHI.pdf"
-                  className="flex flex-row items-center mx-[24px] text-center mb-2 mt-6 bg-amber font-bold text-black text-base py-[6px] px-[10px] rounded-sm hover:bg-white transition-colors active:scale-105 "
+                  to="RESUME_VICTOR_MACHI.pdf"
+                  className="flex flex-row items-center mx-[24px] text-center mb-2 mt-6 bg-gray-600 hover:bg-amber hover:text-black transition-colors text-base py-[6px] px-[10px] rounded-md active:scale-105 "
                 >
-                  <LiaFileDownloadSolid
-                    size={16}
-                    color="black"
-                    className="mr-[6px]"
-                  />
-                  Resume
+                  Download resume
                 </Link>
               </div>
             </div>
@@ -137,6 +119,18 @@ const NavBar = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const MenuItem = ({ label, href }: any) => {
+  return (
+    <Link
+      key={label}
+      to={href}
+      className={`font-medium text-sm hover:text-white transition-colors`}
+    >
+      {label}
+    </Link>
   );
 };
 

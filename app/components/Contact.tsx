@@ -1,8 +1,7 @@
-import React from "react";
-import SectionTitle from "./utils/SectionTitle";
-import Link from "next/link";
-import profile from "@/profile";
+import profile from "../../profile";
+import { Link } from "@remix-run/react";
 import { LiaFileDownloadSolid } from "react-icons/lia";
+import SectionTitle from "./utils/SectionTitle";
 
 interface Props {
   className?: string;
@@ -16,25 +15,11 @@ const Contact = (props: Props) => {
         {profile.ambition}
       </p>
       <Link
-        href="mailto:machivictordev@gmail.com"
-        className="bg-amber font-bold text-black text-[15px] py-[10px] px-[20px] rounded-sm hover:bg-white transition-colors md:text-[17px]"
+        to="mailto:machivictordev@gmail.com"
+        className="bg-gray-600 hover:bg-amber hover:text-black text-[15px] py-[10px] px-[20px] rounded-md transition-colors md:text-md"
       >
-        machivictordev@gmail.com
+        Get in touch
       </Link>
-      <div className="pt-6">
-        <Link
-          download="RESUME_VICTOR_MACHI.pdf"
-          href="RESUME_VICTOR_MACHI.pdf"
-          className="flex flex-row items-center text-base text-sky font-semibold hover:text-white transition md:text-[16px]"
-        >
-          <LiaFileDownloadSolid
-            size={16}
-            color="#fff"
-            className="mr-[6px] text-indigo"
-          />
-          Resume.pdf
-        </Link>
-      </div>
     </div>
   );
 };
