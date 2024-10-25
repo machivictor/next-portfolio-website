@@ -7,8 +7,8 @@ const imageDimensionClass = "aspect-square w-[240px] md:w-[250px] xl:w-[300px]";
 
 const Hero = () => {
   return (
-    <div className="mx-auto py-20 max-w-xl md:py-32 md:max-w-3xl lg:py-32">
-      <div className="md:max-h-72 md:flex md:justify-center md:items-center mx-auto">
+    <div className="mx-auto mt-[-20px] max-w-xl md:max-w-none min-h-screen flex justify-center items-center">
+      <div className="md:flex md:justify-center md:items-center md:flex-1">
         {/* image */}
         <div
           className={`mx-auto md:mx-0 rounded-full overflow-hidden md:shrink-0 ${imageDimensionClass}`}
@@ -42,7 +42,7 @@ const Hero = () => {
 
               return (
                 <Link key={social.name} to={social.url}>
-                  <div className="w-[36px] h-[36px] rounded-full mx-2 bg-amber flex justify-center items-center hover:bg-white transition">
+                  <div className="w-[36px] h-[36px] rounded-full mx-2 bg-amber flex justify-center items-center hover:scale-110 transition">
                     {social.name == "linkedin" && (
                       <IoLogoLinkedin {...iconProps} />
                     )}

@@ -1,6 +1,5 @@
-import { Link, useLocation } from "@remix-run/react";
-import React, { useEffect } from "react";
-import { LiaFileDownloadSolid } from "react-icons/lia";
+import { Link } from "@remix-run/react";
+import React from "react";
 import profile from "../../profile";
 
 const TABS = [
@@ -59,7 +58,7 @@ const NavBar = () => {
             <Link
               target="_blank"
               to="RESUME_VICTOR_MACHI.pdf"
-              className="flex flex-row items-center text-sm py-[6px] px-[12px] rounded-md bg-gray-600 hover:bg-amber hover:text-black transition-colors active:scale-105"
+              className="flex flex-row items-center text-sm py-[8px] px-[14px] rounded-md bg-gray-600 hover:bg-amber hover:text-black transition-colors"
             >
               Download resume
             </Link>
@@ -126,7 +125,7 @@ const MenuItem = ({ label, href }: any) => {
   return (
     <Link
       to={href}
-      className={`font-medium text-sm hover:text-white transition-colors`}
+      className="font-medium text-sm hover:text-white hover:underline transition-colors"
     >
       {label}
     </Link>

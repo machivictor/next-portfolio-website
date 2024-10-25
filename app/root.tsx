@@ -2,13 +2,19 @@ import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
+  MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/remix";
+import Contact from "~/components/Contact";
+import ExpertiseTable from "~/components/ExpertiseTable";
+import Footer from "~/components/Footer";
+import Hero from "~/components/Hero";
 import NavBar from "~/components/Navbar";
+import Work from "~/components/Projects";
 
 import globalStyles from "./globals.css?url";
 
@@ -26,7 +32,17 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Machi Victor" },
+    {
+      name: "description",
+      content: "Machi Victor's personal portfolio website.",
+    },
+  ];
+};
+
+export function Layout({}: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -35,11 +51,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className={`min-w-fit font-sans`}>
+      <body className="min-w-fit font-sans">
         <nav className="sticky top-0 z-40 w-full">
           <NavBar />
         </nav>
-        <main className="max-w-[1180px] mx-auto">{children}</main>
+        <main className="max-w-[1180px] mx-auto">
+          <div className="pb-10 mx-auto px-6 md:px-10 xl:px-0 xl:max-w-[1380px]">
+            <Hero />
+            <Work className="pt-8" />
+            <ExpertiseTable className="pt-28" />
+            <Contact className="pt-28" />
+            <Footer />
+          </div>
+        </main>
 
         <ScrollRestoration />
         <Scripts />

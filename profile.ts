@@ -1,5 +1,7 @@
-import headshot from "/images/headshot.jpg?url";
+import headshot from "/images/headshot.png?url";
+import samaritanBannerThumbnail from "/images/samaritan-banner-thumbnail.png?url";
 import samaritanBanner from "/images/samaritan-banner.png?url";
+import tamariBannerThumbnail from "/images/tamari-banner-thumbnail.png?url";
 import tamariBanner from "/images/tamari-banner.png?url";
 import tamariIcon from "/images/tamari-icon.png?url";
 
@@ -26,6 +28,7 @@ export const projects = [
     category: "Patented",
     banner: {
       path: tamariBanner,
+      thumbnailPath: tamariBannerThumbnail,
       alt: "Tamari app banner.",
     },
     links: [
@@ -41,6 +44,7 @@ export const projects = [
     category: "Demo project",
     banner: {
       path: samaritanBanner,
+      thumbnailPath: samaritanBannerThumbnail,
       alt: "Samaritan app banner.",
     },
     links: [

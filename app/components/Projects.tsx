@@ -1,8 +1,7 @@
-import { projects } from "../../profile";
-
 import { Link } from "@remix-run/react";
-import SectionTitle from "./utils/SectionTitle";
 import { IoLogoFigma, IoLogoGooglePlaystore } from "react-icons/io5";
+import { projects } from "../../profile";
+import SectionTitle from "./utils/SectionTitle";
 
 interface Props {
   className?: string;
@@ -13,8 +12,8 @@ const Projects = (props: Props) => {
     const iconProps = { size: 20 };
 
     return (
-      <Link to={link.url} target="__blank">
-        <span className="flex flex-row items-center space-x-2 bg-gray-600 hover:bg-amber hover:text-black transition p-2 px-3 rounded-md">
+      <Link key={link.platform} to={link.url} target="__blank">
+        <span className="flex flex-row items-center space-x-2 bg-gray-600 hover:bg-amber hover:text-black transition py-[8px] px-[14px] rounded-md">
           {link.platform == "playstore" ? (
             <IoLogoGooglePlaystore {...iconProps} />
           ) : (
@@ -49,16 +48,18 @@ const Projects = (props: Props) => {
                 <div className="md:flex-col">
                   {/* image */}
                   <div className="md:shrink-0">
-                    <img
-                      className="h-60 w-full object-cover sm:aspect-video md:h-80 md:w-full"
-                      src={project.banner.path}
-                      alt={project.banner.alt}
-                    />
+                    <a target="__blank" href={project.banner.path}>
+                      <img
+                        className="object-cover aspect-video md:w-auto md:h-80"
+                        src={project.banner.thumbnailPath}
+                        alt={project.banner.alt}
+                      />
+                    </a>
                   </div>
 
                   {/* description */}
                   <div className="py-7 px-5 sm:flex sm:flex-col sm:justify-center">
-                    <div className="flex flex-row items-center space-x-4 mb-[10px]">
+                    <div className="flex flex-row items-center space-x-[18px] mb-[10px]">
                       {project.icon && (
                         <img
                           src={project.icon}
@@ -67,7 +68,7 @@ const Projects = (props: Props) => {
                         />
                       )}
                       <h3 className="block leading-tight">
-                        <div className="tracking-wide text-[13px] leading-[18px] text-sky font-medium md:text-[15px] md:leading-[20px]">
+                        <div className="tracking-wide text-xs text-sky font-medium">
                           {project.category}
                         </div>
                         {project.name}

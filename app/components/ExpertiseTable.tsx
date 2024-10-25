@@ -16,7 +16,7 @@ const ExpertiseTable = (props: Props) => {
         subheading="Learn more about my skills"
         className="mb-10"
       />
-      <div className="mx-auto rounded-lg overflow-hidden ring-2 ring-gray-600 md:max-w-none md:flex">
+      <div className="mx-auto rounded-lg overflow-hidden ring-2 ring-gray-600 max-w-[480px] md:mb-0 lg:max-w-none md:max-w-none md:flex">
         {skills.map((skill, index) => {
           const colors = ["#00B5B2", "#F3A12C", "#c98eff"];
 

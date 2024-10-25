@@ -1,6 +1,5 @@
-import profile from "../../profile";
 import { Link } from "@remix-run/react";
-import { LiaFileDownloadSolid } from "react-icons/lia";
+import profile from "../../profile";
 import SectionTitle from "./utils/SectionTitle";
 
 interface Props {
@@ -16,7 +15,7 @@ const Contact = (props: Props) => {
       </p>
       <Link
         to="mailto:machivictordev@gmail.com"
-        className="bg-gray-600 hover:bg-amber hover:text-black text-[15px] py-[10px] px-[20px] rounded-md transition-colors md:text-md"
+        className="bg-gray-600 hover:bg-amber hover:text-black text-sm py-[8px] px-[14px] rounded-md transition-colors"
       >
         Get in touch
       </Link>
