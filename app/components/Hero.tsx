@@ -48,7 +48,7 @@ const Hero = () => {
                   asChild
                   variant={"outline"}
                   size="icon"
-                  className="group scale-110 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all"
+                  className="group ring-1 ring-ring scale-110 rounded-full bg-accent hover:bg-primary hover:text-primary-foreground transition-all"
                 >
                   <Link to={social.url}>
                     <>
