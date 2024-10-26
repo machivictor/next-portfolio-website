@@ -49,14 +49,14 @@ const NavBar = () => {
           </Link>
 
           {/* tabs */}
-          <div className="hidden sm:flex space-x-1">
+          <div className="hidden space-x-1 md:flex ">
             {TABS.map((tab) => (
               <MenuItem key={tab.label} {...tab} />
             ))}
           </div>
 
           {/* CTA */}
-          <div className="hidden sm:flex space-x-2">
+          <div className="hidden md:flex space-x-2">
             <Link
               target="_blank"
               to="RESUME_VICTOR_MACHI.pdf"
@@ -68,7 +68,7 @@ const NavBar = () => {
           </div>
 
           {/* mobile hamburger */}
-          <div className="sm:hidden flex items-center z-20 space-x-2">
+          <div className="md:hidden flex items-center z-20 space-x-2">
             <ThemeToggle />
             <Button
               size="icon"
@@ -91,39 +91,39 @@ const NavBar = () => {
               </svg>
             </Button>
           </div>
-
-          {/* mobile menu */}
-          {mobileMenuShown && (
-            <Button
-              variant={"outline"}
-              onClick={() => setMobileMenuShown(false)}
-              className="flex flex-1 text-card-foreground absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm"
-              style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
-            >
-              <div className="flex flex-col pb-[10px] absolute right-6 rounded-md top-16 bg-card overflow-hidden">
-                {TABS.map((tab) => (
-                  <Link
-                    key={tab.label}
-                    to={tab.href}
-                    className="border-b border-border text-base font-medium py-[12px] px-[20px] hover:bg-accent transition"
-                  >
-                    {tab.label}
-                  </Link>
-                ))}
-
-                <Button
-                  asChild
-                  variant="outline"
-                  className="bg-accent hover:bg-primary mx-[24px] mb-2 mt-6 hover:text-primary-foreground py-[6px] px-[10px]"
-                >
-                  <Link target="_blank" to="RESUME_VICTOR_MACHI.pdf">
-                    Download Resume
-                  </Link>
-                </Button>
-              </div>
-            </Button>
-          )}
         </div>
+
+        {/* mobile menu */}
+        {mobileMenuShown && (
+          <Button
+            variant={"outline"}
+            onClick={() => setMobileMenuShown(false)}
+            className="flex flex-1 text-card-foreground absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm"
+            style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
+          >
+            <div className="flex flex-col pb-[10px] absolute right-6 rounded-md top-16 bg-card overflow-hidden">
+              {TABS.map((tab) => (
+                <Link
+                  key={tab.label}
+                  to={tab.href}
+                  className="border-b border-border text-base font-medium py-[12px] px-[20px] hover:bg-accent transition"
+                >
+                  {tab.label}
+                </Link>
+              ))}
+
+              <Button
+                asChild
+                variant="outline"
+                className="bg-accent hover:bg-primary mx-[24px] mb-2 mt-6 hover:text-primary-foreground py-[6px] px-[10px]"
+              >
+                <Link target="_blank" to="RESUME_VICTOR_MACHI.pdf">
+                  Download Resume
+                </Link>
+              </Button>
+            </div>
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -139,7 +139,7 @@ const MenuItem = ({ label, href }: MenuItemProps) => {
     <Button
       asChild
       variant="link"
-      className="font-medium text-sm text-foreground opacity-60 hover:opacity-100 hover:underline transition"
+      className="font-medium text-sm text-foreground opacity-60 hover:opacity-100 hover:underline decoration-primary transition"
     >
       <Link to={href}>{label}</Link>
     </Button>

@@ -24,8 +24,10 @@ const Hero = () => {
         <div>
           {/* heading */}
           <h1 className="mx-auto text-center text-sm font-medium max-w-[380px] md:text-left md:max-w-md md:mx-0 md:pl-7 lg:w-6xl xl:pl-9">
-            <p className="mb-3 mt-8 md:mt-0 text-base font-medium md:text-base">
-              A {profile.role} who
+            <p className="mb-3 mt-8 md:mt-0 text-base font-medium md:text-base opacity-100">
+              <span className="opacity-70">A </span>
+              <span className="underline opacity-80">{profile.role}</span>{" "}
+              <span className="opacity-70">who</span>
             </p>
             <div className="font-heading mb-8 text-[34px] leading-[40px] md:text-[44px] md:leading-[52px]">
               Crafts{" "}
