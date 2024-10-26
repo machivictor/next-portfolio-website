@@ -1,4 +1,5 @@
 import { Link, useNavigation } from "@remix-run/react";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   const navigation = useNavigation();
@@ -7,16 +8,11 @@ const Footer = () => {
   if (isLoading) return null;
 
   return (
-    <footer className="mt-20 flex justify-center">
-      <p className=" text-white md:text-sm">
-        Designed and built by{" "}
-        <Link
-          to="#"
-          className="font-bold text-amber hover:underline hover:decoration-amber"
-        >
-          {"  "}Machi Victor
-        </Link>
-      </p>
+    <footer className="mt-20 flex justify-center items-center">
+      <p className="md:text-sm">Designed and built by</p>
+      <Button asChild variant={"link"} className="px-[5px] font-bold">
+        <Link to="#">Machi Victor</Link>
+      </Button>
     </footer>
   );
 };

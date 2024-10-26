@@ -9,22 +9,28 @@ interface Props {
 
 const Projects = (props: Props) => {
   const renderButton = (link: (typeof projects)[0]["links"][0]) => {
-    const iconProps = { size: 20 };
+    const iconProps = {
+      size: 20,
+      className: "text-primary group-hover:text-primary-foreground",
+    };
 
     return (
-      <Link key={link.platform} to={link.url} target="__blank">
-        <span className="flex flex-row items-center space-x-2 bg-gray-600 hover:bg-amber hover:text-black transition py-[8px] px-[14px] rounded-md">
-          {link.platform == "playstore" ? (
-            <IoLogoGooglePlaystore {...iconProps} />
-          ) : (
-            <IoLogoFigma {...iconProps} />
-          )}
+      <Link
+        key={link.platform}
+        to={link.url}
+        target="__blank"
+        className="group flex flex-row items-center space-x-2 ring-1 ring-border bg-accent dark:shadow-lg hover:bg-primary hover:text-primary-foreground transition py-[8px] px-[14px] rounded-md"
+      >
+        {link.platform == "playstore" ? (
+          <IoLogoGooglePlaystore {...iconProps} />
+        ) : (
+          <IoLogoFigma {...iconProps} />
+        )}
 
-          <p className="">
-            {link.platform == "playstore"
-              ? "View app on Google Play"
-              : "View figma design"}
-          </p>
+        <span>
+          {link.platform == "playstore"
+            ? "View app on Google Play"
+            : "View figma design"}
         </span>
       </Link>
     );
@@ -42,7 +48,7 @@ const Projects = (props: Props) => {
           return (
             <div key={project.name}>
               <div
-                className="mb-10 ring-2 ring-gray-700 mx-auto bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-[480px] md:mb-0 lg:max-w-none"
+                className="mb-10 ring-1 ring-border mx-auto bg-card rounded-lg shadow-md overflow-hidden max-w-[480px] md:mb-0 lg:max-w-none"
                 style={index == projects.length - 1 ? { marginBottom: 0 } : {}}
               >
                 <div className="md:flex-col">
@@ -64,11 +70,11 @@ const Projects = (props: Props) => {
                         <img
                           src={project.icon}
                           alt={`${project.name}'s icon`}
-                          className="aspect-square w-12 h-12 rounded-lg"
+                          className="aspect-square w-12 h-112 rounded-lg"
                         />
                       )}
                       <h3 className="block leading-tight">
-                        <div className="tracking-wide text-xs text-sky font-medium">
+                        <div className="tracking-wide text-xs font-medium text-primary">
                           {project.category}
                         </div>
                         {project.name}

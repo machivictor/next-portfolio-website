@@ -17,6 +17,7 @@ import NavBar from "~/components/Navbar";
 import Work from "~/components/Projects";
 
 import globalStyles from "./globals.css?url";
+import { ThemeProvider } from "./components/theme-provider";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyles },
@@ -44,34 +45,36 @@ export const meta: MetaFunction = () => {
 
 export function Layout() {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body className="min-w-fit font-sans">
-        <nav className="sticky top-0 z-40 w-full">
-          <NavBar />
-        </nav>
-        <main className="max-w-[1180px] mx-auto">
-          <div className="pb-10 mx-auto px-6 md:px-10 xl:px-0 xl:max-w-[1380px]">
-            <Hero />
-            <Work className="pt-28" />
-            <ExpertiseTable className="pt-28" />
-            <Contact className="pt-28" />
-            <Footer />
-          </div>
-        </main>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+        </head>
+        <body className="min-w-fit font-sans">
+          <nav className="sticky top-0 z-40 w-full">
+            <NavBar />
+          </nav>
+          <main className="max-w-[1180px] mx-auto">
+            <div className="pb-10 mx-auto px-6 md:px-10 xl:px-0 xl:max-w-[1380px]">
+              <Hero />
+              <Work className="pt-28" />
+              <ExpertiseTable className="pt-28" />
+              <Contact className="pt-28" />
+              <Footer />
+            </div>
+          </main>
 
-        <ScrollRestoration />
-        <Scripts />
+          <ScrollRestoration />
+          <Scripts />
 
-        <SpeedInsights />
-        <Analytics />
-      </body>
-    </html>
+          <SpeedInsights />
+          <Analytics />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
 

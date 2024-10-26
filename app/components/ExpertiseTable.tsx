@@ -16,32 +16,21 @@ const ExpertiseTable = (props: Props) => {
         subheading="Learn more about my skills"
         className="mb-10"
       />
-      <div className="mx-auto rounded-lg overflow-hidden ring-2 ring-gray-600 max-w-[480px] md:mb-0 lg:max-w-none md:max-w-none md:flex">
-        {skills.map((skill, index) => {
-          const colors = ["#00B5B2", "#F3A12C", "#c98eff"];
-
+      <div className="mx-auto rounded-lg overflow-hidden ring-1 ring-border max-w-[480px] md:mb-0 lg:max-w-none md:max-w-none md:flex">
+        {skills.map((skill) => {
           return (
             <div
               key={skill.name}
-              className="bg-gray-800 ring-2 ring-gray-600 py-5 px-4 pb-3 mx-auto md:w-1/3"
+              className="bg-card ring-1 ring-border py-5 px-4 pb-3 mx-auto md:w-1/3"
             >
               <div className="max-w-[460px]">
-                <h3
-                  className={`mb-2 text-[22px]`}
-                  style={{ color: colors[index] }}
-                >
-                  {skill.name}
-                </h3>
+                <h3 className={`mb-2 text-[22px] text-pretty`}>{skill.name}</h3>
                 <p className="mb-7">{skill.description}</p>
                 <div className="flex flex-wrap">
                   {skill.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`border-[1.9px] rounded-full py-1 px-[12px] mr-[12px] mb-[14px] text-[13px] font-semibold`}
-                      style={{
-                        borderColor: colors[index],
-                        color: colors[index],
-                      }}
+                      className={`ring-1 ring-primary text-primary rounded-full py-[2px] px-[12px] mr-[12px] mb-[14px]`}
                     >
                       {tag}
                     </span>
