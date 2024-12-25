@@ -95,10 +95,9 @@ const NavBar = () => {
 
         {/* mobile menu */}
         {mobileMenuShown && (
-          <Button
-            variant={"outline"}
+          <div
             onClick={() => setMobileMenuShown(false)}
-            className="flex flex-1 text-card-foreground absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm"
+            className="flex flex-1 text-card-foreground absolute left-0 right-0 top-0 h-screen transition backdrop-blur-sm border-0"
             style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
           >
             <div className="flex flex-col pb-[10px] absolute right-6 rounded-md top-16 bg-card overflow-hidden">
@@ -106,7 +105,7 @@ const NavBar = () => {
                 <Link
                   key={tab.label}
                   to={tab.href}
-                  className="border-b border-border text-base font-medium py-[12px] px-[20px] hover:bg-accent transition"
+                  className="text-center border-b border-border text-base font-medium py-[12px] px-[20px] hover:bg-accent transition"
                 >
                   {tab.label}
                 </Link>
@@ -114,15 +113,14 @@ const NavBar = () => {
 
               <Button
                 asChild
-                variant="outline"
-                className="bg-accent hover:bg-primary mx-[24px] mb-2 mt-6 hover:text-primary-foreground py-[6px] px-[10px]"
+                className="mx-[24px] mb-2 mt-6 hover:scale-105 transition-all"
               >
                 <Link target="_blank" to="RESUME_VICTOR_MACHI.pdf">
                   Download Resume
                 </Link>
               </Button>
             </div>
-          </Button>
+          </div>
         )}
       </div>
     </div>
