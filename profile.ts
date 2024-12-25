@@ -12,6 +12,7 @@ export default {
   role: "software engineer",
   valueProp: "Crafts deligtful user experiences",
   ambition: `I am currently looking to join a cross-functional team that values improving people's lives through software engineering. Or need help with your project? Let's connect.`,
+  xUrl: "https://x.com/machi_victor",
 };
 
 export const socials = [

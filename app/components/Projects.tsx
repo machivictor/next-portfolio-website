@@ -65,7 +65,7 @@ const Projects = (props: Props) => {
 
                   {/* description */}
                   <div className="py-7 px-5 sm:flex sm:flex-col sm:justify-center">
-                    <div className="flex flex-row items-center space-x-[18px] mb-[10px]">
+                    <div className="flex flex-row items-center space-x-[14px] mb-[10px]">
                       {project.icon && (
                         <img
                           src={project.icon}

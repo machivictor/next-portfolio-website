@@ -1,4 +1,5 @@
 import { Link, useNavigation } from "@remix-run/react";
+import profile from "profile";
 import { Button } from "./ui/button";
 
 const Footer = () => {
@@ -11,7 +12,9 @@ const Footer = () => {
     <footer className="mt-20 flex justify-center items-center">
       <p className="md:text-sm">Designed and built by</p>
       <Button asChild variant={"link"} className="px-[5px] font-bold">
-        <Link to="#">Machi Victor</Link>
+        <Link to={profile.xUrl} target={"_blank"}>
+          Machi Victor
+        </Link>
       </Button>
     </footer>
   );
