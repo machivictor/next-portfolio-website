@@ -1,7 +1,7 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { IoLogoFigma, IoLogoGooglePlaystore } from "react-icons/io5";
-import { projects } from "../../profile";
-import SectionTitle from "./utils/SectionTitle";
+import { projects } from "@/profile";
+import SectionTitle from "./utils/section-title";
 
 interface Props {
   className?: string;
@@ -70,10 +70,10 @@ const Projects = (props: Props) => {
                         <img
                           src={project.icon}
                           alt={`${project.name}'s icon`}
-                          className="aspect-square w-12 h-112 rounded-lg"
+                          className="aspect-square w-12 rounded-lg"
                         />
                       )}
-                      <h3 className="block leading-tight">
+                      <h3 className="block leading-tight font-medium">
                         <div className="tracking-wide text-xs font-medium text-primary">
                           {project.category}
                         </div>

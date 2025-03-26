@@ -1,7 +1,7 @@
-import { Link } from "@remix-run/react";
-import profile from "../../profile";
+import { Link } from "react-router";
+import profile from "@/profile";
 import { Button } from "./ui/button";
-import SectionTitle from "./utils/SectionTitle";
+import SectionTitle from "./utils/section-title";
 
 interface Props {
   className?: string;

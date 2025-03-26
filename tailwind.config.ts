@@ -2,9 +2,8 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [require("tailwindcss-animate")],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
       heading: ["Preahvihear", ...defaultTheme.fontFamily.sans],

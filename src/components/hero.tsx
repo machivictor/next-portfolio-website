@@ -1,7 +1,7 @@
-import { Link } from "@remix-run/react";
+import profile, { socials } from "@/profile";
 import { IoLogoGithub, IoLogoLinkedin, IoMail } from "react-icons/io5";
 import { SiUpwork } from "react-icons/si";
-import profile, { socials } from "../../profile";
+import { Link } from "react-router";
 import { Button } from "./ui/button";
 
 const imageDimensionClass = "aspect-square w-[240px] md:w-[250px] xl:w-[300px]";

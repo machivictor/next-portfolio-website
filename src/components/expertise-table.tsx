@@ -1,5 +1,5 @@
-import { skills } from "../../profile";
-import SectionTitle from "./utils/SectionTitle";
+import { skills } from "@/profile";
+import SectionTitle from "./utils/section-title";
 
 interface Props {
   className?: string;
@@ -24,7 +24,9 @@ const ExpertiseTable = (props: Props) => {
               className="bg-card ring-1 ring-border py-5 px-4 pb-3 mx-auto md:w-1/3"
             >
               <div className="max-w-[460px]">
-                <h3 className={`mb-2 text-[22px] text-pretty`}>{skill.name}</h3>
+                <h3 className={`mb-2 text-[22px] text-pretty font-medium`}>
+                  {skill.name}
+                </h3>
                 <p className="mb-7">{skill.description}</p>
                 <div className="flex flex-wrap">
                   {skill.tags.map((tag) => (

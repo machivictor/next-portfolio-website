@@ -1,7 +1,7 @@
-import { Link } from "@remix-run/react";
+import profile from "@/profile";
 import React from "react";
-import profile from "../../profile";
-import ThemeToggle from "./ThemeToggle";
+import { Link } from "react-router";
+import ThemeToggle from "./theme-toggle";
 import { Button } from "./ui/button";
 
 const TABS = [
