@@ -2,6 +2,7 @@ import Navbar from "@/components/nav-bar";
 import SectionTitle from "@/components/section-title";
 import { Button } from "@/components/ui/button";
 import profile, { projects, skills } from "@/profile";
+import { Globe } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,11 +68,17 @@ export default function Home() {
       >
         {link.platform === "playstore" ? (
           <IoLogoGooglePlaystore {...iconProps} />
-        ) : (
+        ) : link.platform === "figma" ? (
           <IoLogoFigma {...iconProps} />
+        ) : (
+          <Globe {...iconProps} />
         )}
         <span className="whitespace-nowrap">
-          {link.platform === "playstore" ? "Google Play" : "Figma Design"}
+          {link.platform === "playstore"
+            ? "Google Play"
+            : link.platform === "site"
+            ? "Visit site"
+            : "Figma Design"}
         </span>
       </Link>
     );
@@ -181,6 +188,16 @@ export default function Home() {
 
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {project.description}
+                    {project.name == "Tamari" && (
+                      <a
+                        href="https://mmust.ac.ke"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline hover:text-primary/80"
+                      >
+                        MMUST
+                      </a>
+                    )}
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-3">
