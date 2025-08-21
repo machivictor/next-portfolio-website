@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { socials } from "@/profile";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Machi Victor — Fullstack Developer",
@@ -26,6 +27,9 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+
+        <Analytics />
+
         <Script
           id="ld-json"
           type="application/ld+json"
