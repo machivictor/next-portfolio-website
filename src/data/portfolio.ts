@@ -60,7 +60,7 @@ export const about = [
   "I’m a **software engineer** from Moyale, Kenya focused on building thoughtful apps that solve real operational problems.",
   "While in university, I invented and registered a utility model for a dynamic timetable scheduling system, which later became **Tamari** — an education technology platform for university timetable scheduling, academic coordination, and learning resource sharing.",
   "Currently, I’m building **Black Book**, a mobile-first POS platform helping Kenyan SMEs manage sales, inventory, debt, and payments directly from a smartphone without expensive hardware or complicated setup.",
-  "Previously, I contributed to **AIam**, an AI-driven application focused on automation and personalized user experiences, working on cross-platform mobile features and scalable frontend architecture alongside an international team.",
+  "I contributed to **AIam**, an AI-driven application focused on automation and personalized user experiences, working on cross-platform mobile features and scalable frontend architecture alongside an international team.",
   "I enjoy building at the intersection of **engineering**, product, and design, with experience across React, Next.js, React Native, TypeScript, Node.js, GraphQL, SQL, NoSQL, Figma and **swimming 😊**.",
 ];
 
