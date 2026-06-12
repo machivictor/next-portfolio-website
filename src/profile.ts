@@ -18,7 +18,7 @@ export const socials = [
 
 export const projects = [
   {
-    name: "Tamari",
+    name: "tAMARI",
     description: `Inspired by my own experience as a university student, it enables students and lecturers to easily view and manage their schedules, find available classrooms, and share learning material. This project is currently under testing in `,
     icon: "/tamari-icon.png",
     category: "Patented",
