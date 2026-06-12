@@ -48,7 +48,7 @@ export const profile = {
   name: "Machi Victor",
   title: "Software Engineer & App Developer",
   summary:
-    "I build **mobile-first** websites and apps, with a focus on **practical** systems people can actually use.",
+    "I build websites and apps, with a focus on **practical** systems people can actually use.",
   location: "Available for frontend, React Native, and full-stack roles",
   image: {
     src: "/headshot.png",
@@ -58,9 +58,9 @@ export const profile = {
 
 export const about = [
   "I’m a **software engineer** from Moyale, Kenya focused on building thoughtful apps that solve real operational problems.",
-  "While in university, I invented and registered a utility model for a dynamic timetable scheduling system, which later became **Tamari** — a platform for managing academic schedules and learning resources more efficiently.",
+  "While in university, I invented and registered a utility model for a dynamic timetable scheduling system, which later became **Tamari** — an education technology platform for university timetable scheduling, academic coordination, and learning resource sharing.",
   "Currently, I’m building **Black Book**, a mobile-first POS platform helping Kenyan SMEs manage sales, inventory, debt, and payments directly from a smartphone without expensive hardware or complicated setup.",
-  "Previously, I contributed to **AIam**, an AI-driven application focused on automation and personalized user experiences, working on cross-platform mobile features and scalable frontend architecture.",
+  "Previously, I contributed to **AIam**, an AI-driven application focused on automation and personalized user experiences, working on cross-platform mobile features and scalable frontend architecture alongside an international team.",
   "I enjoy building at the intersection of **engineering**, product, and design, with experience across React, Next.js, React Native, TypeScript, Node.js, GraphQL, SQL, NoSQL, and Figma.",
 ];
 
@@ -224,15 +224,15 @@ export const writing: Writing[] = [
     href: "/tamari-utility-model-certificate.pdf",
     date: "2024",
     description:
-      "Designed a system for generating, managing, and distributing personalized study and examination timetables for higher education institutions. Done in collaboration with **Masinde Muliro University of Science and Technology**",
+      "Inventor of a registered utility model for a web-based dynamic timetable scheduling system that generates and distributes personalized academic schedules for students and lecturers. This innovation formed the foundation of the Tamari platform. Click to view the registered utility model certificate.",
   },
   {
     title: "Building in Public",
     publication: "Product Notes",
-    href: "https://x.com/machi_mullata",
+    href: "https://www.linkedin.com/in/machi-victor",
     date: "Now",
     description:
-      "Sharing the journey of building Black Book and Tamari while validating product decisions with real workflows and real users.",
+      "Sharing the journey of building Black Book and Tamari while validating product decisions with real workflows and real users. Follow along on social media!",
   },
 ];
 
