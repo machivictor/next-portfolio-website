@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://machivictor.vercel.app/sitemap.xml
+
+# Block any private folders (if added later)
+Disallow: /api/
