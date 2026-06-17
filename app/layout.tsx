@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import { profile } from "@/src/data/portfolio";
 import { BASE_URL, SITE } from "@/src/config/site";
@@ -106,7 +107,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full bg-slate-950 font-sans">{children}</body>
+      <body className="min-h-full bg-slate-950 font-sans">
+        {children}
+        <Analytics />
+        </body>
     </html>
   );
 }
