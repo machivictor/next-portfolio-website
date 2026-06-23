@@ -36,6 +36,10 @@ export type Writing = {
   href: string;
   date: string;
   description: string;
+  links?: {
+    label: string;
+    href: string;
+  }[];
 };
 
 export const navItems: NavItem[] = [
@@ -46,10 +50,10 @@ export const navItems: NavItem[] = [
 
 export const profile = {
   name: "Machi Victor",
-  title: "Software Engineer & App Developer",
+  title: "Software Engineer & Inventor | Creator of Tamari",
   summary:
-    "I build websites and apps, with a focus on **practical** systems people can actually use.",
-  location: "Available for frontend, React Native, and full-stack roles",
+    "I build practical software systems for real operational problems, led by **Tamari**.",
+  location: "Marsabit County, Kenya",
   image: {
     src: "/headshot.png",
     alt: "Machi Victor headshot",
@@ -57,53 +61,36 @@ export const profile = {
 };
 
 export const about = [
-  "I’m a **software engineer** from Moyale, Kenya focused on building thoughtful apps that solve real operational problems.",
-  "While in university, I invented and registered a utility model for a dynamic timetable scheduling system, which later became **Tamari** — an education technology platform for university timetable scheduling, academic coordination, and learning resource sharing.",
-  "Currently, I’m building **Black Book**, a mobile-first POS platform helping Kenyan SMEs manage sales, inventory, debt, and payments directly from a smartphone without expensive hardware or complicated setup.",
-  "I contributed to **AIam**, an AI-driven application focused on automation and personalized user experiences, working on cross-platform mobile features and scalable frontend architecture alongside an international team.",
-  "I enjoy building at the intersection of **engineering**, product, and design, with experience across React, Next.js, React Native, TypeScript, Node.js, GraphQL, SQL, NoSQL, Figma and **swimming 😊**.",
+  "I’m a software engineer and inventor from Kenya, driven by a simple question: **why do we accept inefficient systems as normal?**",
+  "While studying at university, I became fascinated by the operational problems behind timetable management and developed **Tamari**, a platform for dynamic academic scheduling in higher learning institutions.",
+  "That work led to a registered patent titled **System and Method of Dynamic Timetable Scheduling for Higher Learning Institutions**, created in collaboration with Masinde Muliro University of Science and Technology.",
+  "I have also contributed to **AIam**, an AI-powered mobile application, building cross-platform React Native experiences with an international product team.",
+  "My work sits at the intersection of software engineering, systems thinking, product research, and design, with experience across React, Next.js, React Native, TypeScript, Node.js, SQL, NoSQL, and Figma.",
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Black Book",
-    role: "Founder & Product Engineer",
-    href: "https://www.linkedin.com/in/machi-victor",
-    period: "Jun 2026 - Present",
-    bullets: [
-      "Building a mobile-first point-of-sale platform for small and micro businesses in Kenya.",
-      "Designing offline-first workflows for sales, inventory, customer debt, payments, and lightweight reporting.",
-      "Optimizing the user experience for low-tech, mobile-only business owners who need speed and clarity over complexity.",
-    ],
-    technologies: [
-      "Product Strategy",
-      "React",
-      "TypeScript",
-      "Offline-first",
-      "UX Design",
-    ],
-  },
-  {
     company: "Tamari",
-    role: "Founder & Lead Developer",
+    role: "Creator & Lead Developer",
     href: "https://tamari.digital",
-    period: "May 2025 - Present",
+    period: "2023 - Present",
     bullets: [
-      "Built an education technology platform for university scheduling, academic coordination, and learning resource sharing.",
-      "Designed dynamic timetable generation and distribution workflows backed by a registered utility model concept.",
-      "Created product flows for students, lecturers, and administrators while driving adoption strategy in higher education.",
+      "Conceived and independently developed Tamari, a digital platform for timetable management and academic scheduling in higher learning institutions.",
+      "Collaborated with **MMUST** on the development and registration of a patent for dynamic timetable scheduling.",
+      "Designed core scheduling workflows, personalized timetable delivery, platform infrastructure, and supporting UI/UX.",
+      "Conducted pilot validation with approximately 60 university students over one academic semester.",
     ],
-    technologies: ["Next.js", "React", "Scheduling Systems", "UI/UX", "EdTech"],
+    technologies: ["EdTech", "Scheduling Systems", "React", "Next.js", "UI/UX"],
   },
   {
     company: "Velocity Studio",
-    role: "AI Software Engineer / React Native Developer",
+    role: "Frontend Developer",
     href: "https://velocitystudio.dev/projects/aiam",
-    period: "Nov 2025 - Present",
+    period: "Nov 2025 - Feb 2026",
     bullets: [
-      "Contributing to AIam, an AI-driven application focused on intelligent automation and richer user interaction.",
-      "Developing cross-platform mobile features in React Native and integrating AI-powered personalization workflows.",
-      "Collaborating with an international product team on performance, responsiveness, and scalable app architecture.",
+      "Served as the sole frontend developer on the AIam mobile application, collaborating with product, design, and backend teams.",
+      "Built cross-platform mobile experiences with React Native for consistent Android and iOS performance.",
+      "Integrated AI-powered capabilities into the user experience for intelligent automation and personalized interactions.",
     ],
     technologies: [
       "React Native",
@@ -119,8 +106,9 @@ export const experiences: Experience[] = [
     href: "https://www.linkedin.com/in/machi-victor",
     period: "May 2021 - Aug 2021",
     bullets: [
-      "Supported frontend development work for county government digital services.",
-      "Gained practical experience translating public-sector requirements into usable web interfaces.",
+      "Collaborated on a React Native mobile application intended to streamline parking fee collection for Laikipia County residents.",
+      "Participated in requirements discussions, feature implementation, testing, and iterative improvements.",
+      "Provided technical support across county departments, including Windows troubleshooting, software configuration, basic networking, and workstation maintenance.",
     ],
     technologies: [
       "Frontend Development",
@@ -134,28 +122,10 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: "Black Book",
-    label: "Currently building",
-    description:
-      "A mobile-first POS for Kenyan SMEs that replaces notebook-based record keeping with simple tools for sales, inventory, debt tracking, payments, and reports.",
-    href: "https://www.linkedin.com/in/machi-victor",
-    image: {
-      src: "/window.svg",
-      alt: "Abstract app window graphic",
-    },
-    technologies: [
-      "React",
-      "TypeScript",
-      "Offline-first",
-      "POS",
-      "SME Digitization",
-    ],
-  },
-  {
     title: "Tamari",
-    label: "Patented concept",
+    label: "Core product",
     description:
-      "An education platform inspired by my own university experience. Tamari helps students and lecturers view schedules, find available classrooms, and share learning material.",
+      "A dynamic academic scheduling platform inspired by my university experience. Tamari helps institutions create, manage, and distribute timetables while reducing conflicts and communication delays.",
     href: "https://tamari.digital",
     image: {
       src: "/tamari-banner-thumbnail.png",
@@ -219,20 +189,18 @@ export const writing: Writing[] = [
   },
   {
     title:
-      "System and Method Dynamic Timetable Scheduling For Higher Learning Education",
-    publication: "Registered Utility Model",
-    href: "/tamari-utility-model-certificate.pdf",
+      "System and Method of Dynamic Timetable Scheduling for Higher Learning Institutions",
+    publication: "Registered Patent",
+    href: "/tamari-patent-certificate.pdf",
     date: "2024",
     description:
-      "Inventor of a registered utility model for a web-based dynamic timetable scheduling system that generates and distributes personalized academic schedules for students and lecturers. This innovation formed the foundation of the Tamari platform. Click to view the registered utility model certificate.",
-  },
-  {
-    title: "Building in Public",
-    publication: "Product Notes",
-    href: "https://www.linkedin.com/in/machi-victor",
-    date: "Now",
-    description:
-      "Sharing the journey of building Black Book and Tamari while validating product decisions with real workflows and real users. Follow along on social media!",
+      "Granted protection for Tamari, an academic scheduling system that improves how universities create, manage, and distribute timetables. The patent recognizes a dynamic scheduling framework for conflict detection, real-time updates, personalized schedules, and centralized academic information distribution.",
+    links: [
+      { label: "MMUST", href: "https://www.mmust.ac.ke" },
+      { label: "MMUST SPIIC", href: "https://sciencepark.mmust.ac.ke/" },
+      { label: "Foipal", href: "https://foipal.com/" },
+      { label: "Patent certificate", href: "/tamari-patent-certificate.pdf" },
+    ],
   },
 ];
 

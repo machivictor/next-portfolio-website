@@ -14,11 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Machi Victor | Software Engineer & Product Builder",
+    default: "Machi Victor | Software Engineer & Inventor",
     template: "%s | Machi Victor",
   },
   description:
-    "Software engineer building mobile-first products for education, SMEs, and AI-powered experiences across React, Next.js, React Native, and TypeScript.",
+    "Software engineer, inventor, and creator of Tamari, an academic scheduling platform for higher learning institutions.",
   authors: [{ name: "Machi Victor", url: "https://machivictor.vercel.app" }],
   keywords: [
     "Machi Victor",
@@ -27,14 +27,15 @@ export const metadata: Metadata = {
     "React Native developer",
     "Next.js developer",
     "frontend developer",
-    "product engineer",
     "EdTech",
-    "SME digitization",
+    "Tamari",
+    "academic scheduling",
+    "utility model",
   ],
   openGraph: {
-    title: "Machi Victor | Software Engineer",
+    title: "Machi Victor | Software Engineer & Inventor",
     description:
-      "Product-minded software engineer building practical web and mobile products for education, SMEs, and AI-powered workflows.",
+      "Creator of Tamari, an academic scheduling platform backed by a registered utility model for dynamic timetable scheduling.",
     url: BASE_URL,
     siteName: SITE.name,
     images: [
@@ -51,9 +52,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@machi_victor",
-    title: "Machi Victor | Software Engineer",
+    title: "Machi Victor | Software Engineer & Inventor",
     description:
-      "Software engineer building mobile-first products for education, SMEs, and AI-powered experiences.",
+      "Creator of Tamari, an academic scheduling platform for higher learning institutions.",
     images: ["/headshot.png"],
   },
   alternates: {
@@ -85,7 +86,7 @@ const jsonLd = {
   image: profile.image?.src ?? "/headshot.png",
   jobTitle: profile.title,
   description:
-    "Product-minded software engineer building practical web and mobile products for education, SMEs, and AI-powered workflows.",
+    "Software engineer, inventor, and creator of Tamari, an academic scheduling platform for higher learning institutions.",
 };
 
 export default function RootLayout({

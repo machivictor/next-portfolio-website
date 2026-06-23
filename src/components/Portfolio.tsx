@@ -363,13 +363,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
 function WritingCard({ entry }: { entry: Writing }) {
   return (
     <article className="rounded-md transition lg:group-hover/list:opacity-50 lg:group-focus-within/list:opacity-50 lg:hover:!opacity-100 lg:focus-within:!opacity-100">
-      <a
-        href={entry.href}
-        className="group/card grid gap-2 rounded-md py-4 transition hover:bg-slate-800/50 hover:shadow-lg hover:shadow-slate-950/10 focus-visible:bg-slate-800/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-300 sm:grid-cols-[8rem_1fr] sm:gap-8 lg:-mx-6 lg:px-6"
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`${entry.title} article`}
-      >
+      <div className="group/card grid gap-2 rounded-md py-4 transition hover:bg-slate-800/50 hover:shadow-lg hover:shadow-slate-950/10 sm:grid-cols-[8rem_1fr] sm:gap-8 lg:-mx-6 lg:px-6">
         <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
           {entry.date}
         </p>
@@ -377,15 +371,37 @@ function WritingCard({ entry }: { entry: Writing }) {
           <p className="text-sm font-medium text-teal-300">
             {entry.publication}
           </p>
-          <h3 className="mt-1 font-medium leading-snug text-slate-200 transition-colors group-hover/card:text-teal-300 group-focus-visible/card:text-teal-300">
+          <a
+            href={entry.href}
+            className="mt-1 inline-flex font-medium leading-snug text-slate-200 transition-colors hover:text-teal-300 focus-visible:text-teal-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-300"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${entry.title} article`}
+          >
             {entry.title}
             <ExternalArrow />
-          </h3>
+          </a>
           <p className="mt-3 text-sm leading-6">
             <RichText text={entry.description} />
           </p>
+          {entry.links && (
+            <ul className="mt-4 flex flex-wrap gap-2" aria-label="Related links">
+              {entry.links.map((link) => (
+                <li key={`${entry.title}-${link.label}`}>
+                  <a
+                    href={link.href}
+                    className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium leading-5 text-slate-300 transition hover:bg-teal-400/10 hover:text-teal-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-      </a>
+      </div>
     </article>
   );
 }
